@@ -45,6 +45,8 @@ dependencies {
     implementation Dep.AndroidX.material
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    implementation Dep.timber
+
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.junitExt
     androidTestImplementation Dep.Test.espresso

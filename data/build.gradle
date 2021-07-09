@@ -37,6 +37,9 @@ android {
 
 dependencies {
     implementation Dep.AndroidX.core
+
+    implementation Dep.timber
+
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.junitExt
     androidTestImplementation Dep.Test.espresso

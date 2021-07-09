@@ -56,4 +56,6 @@ object Dep {
         const val junitExt = "androidx.test.ext:junit:1.1.3"
         const val espresso = "androidx.test.espresso:espresso-core:3.4.0"
     }
+
+    const val timber = "com.jakewharton.timber:timber:4.7.1"
 }
