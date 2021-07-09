@@ -4,6 +4,8 @@ import dependencies.Versions
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -36,6 +38,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    kapt {
+        correctErrorTypes true
+    }
 }
 
 dependencies {
@@ -50,6 +55,10 @@ dependencies {
     implementation Dep.AndroidX.constraintlayout
     implementation Dep.AndroidX.Navigation.fragment
     implementation Dep.AndroidX.Navigation.ui
+
+    implementation Dep.Dagger.hiltAndroid
+    kapt Dep.Dagger.hiltCompiler
+
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.junitExt
     androidTestImplementation Dep.Test.espresso
