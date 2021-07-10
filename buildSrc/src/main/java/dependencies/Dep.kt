@@ -48,7 +48,11 @@ object Dep {
     }
 
     object Accompanist {
-
+        private const val version = "0.13.0"
+        const val coil = "com.google.accompanist:accompanist-coil:$version"
+        const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$version"
+        const val pager = "com.google.accompanist:accompanist-pager:$version"
+        const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
     object Test {
