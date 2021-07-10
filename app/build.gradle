@@ -13,7 +13,7 @@ android {
     buildToolsVersion Versions.buildTools
 
     defaultConfig {
-        applicationId "com.droidknights.app2020"
+        applicationId "com.droidknights.app2021"
         minSdk Versions.minSdk
         targetSdk Versions.targetSdk
         versionCode Versions.versionCode
