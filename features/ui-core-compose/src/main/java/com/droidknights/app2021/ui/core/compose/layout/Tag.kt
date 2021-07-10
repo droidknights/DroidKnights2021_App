@@ -1,4 +1,4 @@
-package com.droidknights.app2021.schedule
+package com.droidknights.app2021.ui.core.compose.layout
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
