@@ -9,10 +9,12 @@ import androidx.compose.ui.unit.dp
 import com.droidknights.app2021.ui.core.compose.util.color
 
 @Composable
-fun ScheduleScreen() {
+fun ScheduleScreen(
+    onSessionClick: () -> Unit = {}
+) {
     LazyColumn {
         items(20) {
-            Session()
+            Session(onSessionClick = onSessionClick)
             Divider(
                 modifier = Modifier.padding(horizontal = 24.dp),
                 color = "#EFEFEF".color

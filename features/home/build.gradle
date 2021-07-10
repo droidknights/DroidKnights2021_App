@@ -4,6 +4,8 @@ import dependencies.Versions
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -43,7 +45,11 @@ dependencies {
     implementation Dep.AndroidX.appcompat
     implementation Dep.AndroidX.fragment
     implementation Dep.AndroidX.material
+    implementation Dep.AndroidX.viewModel
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation Dep.Dagger.hiltAndroid
+    kapt Dep.Dagger.hiltCompiler
 
     implementation Dep.timber
 

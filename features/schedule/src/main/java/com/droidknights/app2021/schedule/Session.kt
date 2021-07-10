@@ -16,11 +16,12 @@ import com.google.accompanist.flowlayout.FlowRow
 @Composable
 fun Session(
     modifier: Modifier = Modifier,
+    onSessionClick: () -> Unit = {}
 ) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .clickable { }
+            .clickable { onSessionClick() }
             .padding(horizontal = 24.dp, vertical = 20.dp)
     ) {
         Text(
