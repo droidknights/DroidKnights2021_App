@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.composethemeadapter.MdcTheme
 
 @Suppress("NOTHING_TO_INLINE")
-inline fun ComponentActivity.composeView(
+inline fun ComponentActivity.setThemeContent(
     noinline content: @Composable () -> Unit
 ) = setContent {
     MdcTheme {
@@ -17,7 +17,7 @@ inline fun ComponentActivity.composeView(
 }
 
 @Suppress("NOTHING_TO_INLINE")
-inline fun Fragment.fragmentComposeView(
+inline fun Fragment.setThemeContent(
     noinline content: @Composable () -> Unit
 ) = ComposeView(requireContext()).apply {
     setContent {
