@@ -18,6 +18,7 @@ object Dep {
         const val fragment = "androidx.fragment:fragment-ktx:1.3.5"
         const val material = "com.google.android.material:material:1.4.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
         const val activityCompose = "androidx.activity:activity-compose:1.3.0-rc01"
 

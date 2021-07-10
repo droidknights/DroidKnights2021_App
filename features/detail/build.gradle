@@ -4,6 +4,8 @@ import dependencies.Versions
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -47,8 +49,11 @@ dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':features:ui-core')
     implementation project(path: ':features:ui-core-compose')
+    implementation project(path: ':navigator')
 
+    implementation Dep.AndroidX.activity
     implementation Dep.AndroidX.core
+    implementation Dep.AndroidX.viewModel
 
     implementation Dep.Compose.ui
     implementation Dep.Compose.material
@@ -57,6 +62,9 @@ dependencies {
 
     implementation Dep.Accompanist.coil
     implementation Dep.Accompanist.flowLayout
+
+    implementation Dep.Dagger.hiltAndroid
+    kapt Dep.Dagger.hiltCompiler
 
     implementation Dep.timber
 

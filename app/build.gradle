@@ -48,6 +48,7 @@ dependencies {
     implementation project(path: ':features:schedule')
     implementation project(path: ':features:setting')
     implementation project(path: ':features:detail')
+    implementation project(path: ':navigator')
 
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.appcompat
