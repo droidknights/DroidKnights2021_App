@@ -32,16 +32,31 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Dep.Compose.version
+        kotlinCompilerVersion Dep.Kotlin.version
     }
 }
 
 dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':features:ui-core')
+    implementation project(path: ':features:ui-core-compose')
 
     implementation Dep.AndroidX.core
-    implementation Dep.AndroidX.appcompat
-    implementation Dep.AndroidX.material
+
+    implementation Dep.Compose.ui
+    implementation Dep.Compose.material
+    implementation Dep.Compose.tooling
+    implementation Dep.Compose.themeAdapter
+
+    implementation Dep.Accompanist.coil
+    implementation Dep.Accompanist.flowLayout
 
     implementation Dep.timber
 
