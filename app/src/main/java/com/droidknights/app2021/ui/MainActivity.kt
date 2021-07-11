@@ -1,9 +1,10 @@
-package com.droidknights.app2021
+package com.droidknights.app2021.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.droidknights.app2021.R
 import com.droidknights.app2021.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
