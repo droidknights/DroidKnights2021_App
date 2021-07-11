@@ -63,4 +63,5 @@ object Dep {
     }
 
     const val timber = "com.jakewharton.timber:timber:4.7.1"
+    const val inject = "javax.inject:javax.inject:1"
 }

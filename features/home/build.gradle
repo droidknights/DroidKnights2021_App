@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':features:ui-core')
+    implementation project(path: ':shared')
 
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.appcompat

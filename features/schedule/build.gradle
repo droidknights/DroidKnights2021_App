@@ -50,6 +50,7 @@ dependencies {
     implementation project(path: ':features:ui-core')
     implementation project(path: ':features:ui-core-compose')
     implementation project(path: ':navigator')
+    implementation project(path: ':shared')
 
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.fragment

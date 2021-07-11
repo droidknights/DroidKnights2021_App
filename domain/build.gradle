@@ -36,9 +36,13 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':shared')
+
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.appcompat
     implementation Dep.AndroidX.material
+
+    implementation Dep.inject
 
     implementation Dep.timber
 

@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
+import com.droidknights.app2021.shared.SessionId
 import com.droidknights.app2021.ui.core.compose.setThemeContent
 import com.droidknights.app2021.ui.core.startActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,7 +35,7 @@ class DetailActivity : ComponentActivity() {
     }
 
     companion object {
-        fun start(context: Context, sessionId: Int) {
+        fun start(context: Context, sessionId: SessionId) {
             context.startActivity<DetailActivity>(
                 "sessionId" to sessionId
             )
