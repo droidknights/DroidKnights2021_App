@@ -14,7 +14,7 @@ class ScheduleViewModel @Inject constructor(
 ) : ViewModel() {
     val sessions = liveData {
         emit(Result.Loading)
-        delay(1_000)
+        delay(500)
         emit(GetSessionsUseCase())
     }
 }
