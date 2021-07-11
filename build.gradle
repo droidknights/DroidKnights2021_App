@@ -6,9 +6,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0-beta05"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${Dep.Kotlin.version}"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:${Dep.Dagger.hiltVersion}"
+        classpath Dep.androidGradlePlugin
+        classpath Dep.Kotlin.gradlePlugin
+        classpath Dep.Kotlin.serializationPlugin
+        classpath Dep.Dagger.hiltGradlePlugin
     }
 }
 
