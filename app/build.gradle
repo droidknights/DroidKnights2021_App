@@ -49,6 +49,8 @@ dependencies {
     implementation project(path: ':features:setting')
     implementation project(path: ':features:detail')
     implementation project(path: ':navigator')
+    implementation project(path: ':shared')
+    implementation project(path: ':domain')
 
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.appcompat
@@ -59,6 +61,8 @@ dependencies {
 
     implementation Dep.Dagger.hiltAndroid
     kapt Dep.Dagger.hiltCompiler
+
+    implementation Dep.Kotlin.coroutine
 
     implementation Dep.timber
 

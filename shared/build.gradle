@@ -36,5 +36,12 @@ android {
 }
 
 dependencies {
+    implementation Dep.Kotlin.coroutine
+    implementation Dep.Kotlin.dateTime
+
     implementation Dep.inject
+
+    testImplementation Dep.Test.junit
+    androidTestImplementation Dep.Test.junitExt
+    androidTestImplementation Dep.Test.espresso
 }

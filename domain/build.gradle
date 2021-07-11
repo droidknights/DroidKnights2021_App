@@ -44,6 +44,9 @@ dependencies {
 
     implementation Dep.inject
 
+    implementation Dep.Kotlin.coroutine
+    implementation Dep.Kotlin.dateTime
+
     implementation Dep.timber
 
     testImplementation Dep.Test.junit
