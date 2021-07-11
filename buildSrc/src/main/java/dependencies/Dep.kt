@@ -69,6 +69,13 @@ object Dep {
         const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
+    object Square {
+        const val okhttp3_logging = "com.squareup.okhttp3:logging-interceptor:4.9.1"
+        const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+        const val serialization =
+            "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
+    }
+
     object Test {
         const val junit = "junit:junit:4.13.2"
         const val junitExt = "androidx.test.ext:junit:1.1.3"

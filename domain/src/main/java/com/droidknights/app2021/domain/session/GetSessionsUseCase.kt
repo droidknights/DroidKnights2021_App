@@ -1,5 +1,6 @@
 package com.droidknights.app2021.domain.session
 
+import com.droidknights.app2021.data.ConferenceApi
 import com.droidknights.app2021.domain.NonParamCoroutineUseCase
 import com.droidknights.app2021.shared.di.IoDispatcher
 import com.droidknights.app2021.shared.model.Level
@@ -14,9 +15,16 @@ import javax.inject.Inject
 import kotlin.random.Random
 
 class GetSessionsUseCase @Inject constructor(
-    @IoDispatcher dispatcher: CoroutineDispatcher
+    private val conferenceApi: ConferenceApi,
+    @IoDispatcher dispatcher: CoroutineDispatcher,
 ) : NonParamCoroutineUseCase<List<Session>>(dispatcher) {
     override suspend fun execute(): List<Session> {
+        return runCatching {
+            conferenceApi.getSessions()
+        }.getOrNull() ?: sample()
+    }
+
+    private fun sample(): List<Session> {
         val random = Random(System.currentTimeMillis())
         return mutableListOf<Session>().apply {
             repeat(20) {
