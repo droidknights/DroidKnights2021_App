@@ -1,12 +1,9 @@
-package com.droidknights.app2021.model
+package com.droidknights.app2021.shared.model
 
 import com.droidknights.app2021.shared.HexColor
-import com.droidknights.app2021.shared.SessionId
 import kotlinx.datetime.LocalDateTime
 
 data class Session(
-    val sessionId: SessionId,
-
     val title: String,
     val content: String,
     val speakers: List<Speaker>,

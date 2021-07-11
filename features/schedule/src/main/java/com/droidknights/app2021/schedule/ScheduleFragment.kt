@@ -51,12 +51,8 @@ class ScheduleFragment : Fragment() {
                     is Result.Success -> {
                         ScheduleScreen(
                             sessions = result.data
-                        ) {
-                            detailNavigator.openDetail(
-                                requireContext(),
-                                /** TBD */
-                                0
-                            )
+                        ) { session ->
+                            detailNavigator.openDetail(requireContext(), session)
                         }
                     }
                     is Result.Error -> {

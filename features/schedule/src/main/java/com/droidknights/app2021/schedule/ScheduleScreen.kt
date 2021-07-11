@@ -7,7 +7,7 @@ import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.droidknights.app2021.model.Session
+import com.droidknights.app2021.shared.model.Session
 import com.droidknights.app2021.ui.core.compose.util.color
 
 @Composable

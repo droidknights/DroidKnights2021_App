@@ -1,11 +1,11 @@
 package com.droidknights.app2021.domain.session
 
 import com.droidknights.app2021.domain.NonParamCoroutineUseCase
-import com.droidknights.app2021.model.Level
-import com.droidknights.app2021.model.Session
-import com.droidknights.app2021.model.Speaker
-import com.droidknights.app2021.model.Tag
 import com.droidknights.app2021.shared.di.IoDispatcher
+import com.droidknights.app2021.shared.model.Level
+import com.droidknights.app2021.shared.model.Session
+import com.droidknights.app2021.shared.model.Speaker
+import com.droidknights.app2021.shared.model.Tag
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toInstant
@@ -20,7 +20,6 @@ class GetSessionsUseCase @Inject constructor(
             repeat(20) {
                 add(
                     Session(
-                        sessionId = it,
                         title = "Session Title $it",
                         content = "Content $it",
                         speakers = listOf(
