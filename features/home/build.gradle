@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -47,7 +50,10 @@ dependencies {
     implementation Dep.AndroidX.fragment
     implementation Dep.AndroidX.material
     implementation Dep.AndroidX.viewModel
+    implementation Dep.AndroidX.recyclerview
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation Dep.Kotlin.dateTime
 
     implementation Dep.Dagger.hiltAndroid
     kapt Dep.Dagger.hiltCompiler
