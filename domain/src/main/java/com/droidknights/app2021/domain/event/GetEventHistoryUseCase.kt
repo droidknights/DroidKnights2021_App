@@ -22,7 +22,7 @@ class GetEventHistoryUseCase @Inject constructor(
         return listOf(
             Event(
                 date = "2021-09-25".toLocalDate(),
-                url = "/",
+                url = "",
                 isEndEvent = false
             ),
             Event(

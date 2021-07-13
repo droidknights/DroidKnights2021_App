@@ -7,7 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
-internal abstract class DataBindingAdapter<T>(
+abstract class DataBindingAdapter<T>(
     diffCallback: DiffUtil.ItemCallback<T>
 ) : ListAdapter<T, DataBindingViewHolder<T>>(diffCallback) {
 
@@ -18,7 +18,10 @@ internal abstract class DataBindingAdapter<T>(
         return DataBindingViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: DataBindingViewHolder<T>, position: Int) {
-        return holder.bind(getItem(position))
+    final override fun onBindViewHolder(holder: DataBindingViewHolder<T>, position: Int) {
+        viewBindViewHolder(holder, position)
+        holder.bind(getItem(position))
     }
+
+    protected open fun viewBindViewHolder(holder: DataBindingViewHolder<T>, position: Int) {}
 }

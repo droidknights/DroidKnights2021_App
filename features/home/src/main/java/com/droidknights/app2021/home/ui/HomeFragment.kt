@@ -13,6 +13,9 @@ import com.droidknights.app2021.home.databinding.FragmentHomeBinding
 import com.droidknights.app2021.home.ui.adapter.EventAdapter
 import com.droidknights.app2021.home.ui.adapter.HeaderAdapter
 import com.droidknights.app2021.home.ui.adapter.InfoAdapter
+import com.droidknights.app2021.shared.model.Event
+import com.droidknights.app2021.shared.model.Sponsor
+import com.droidknights.app2021.ui.core.ActivityHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,8 +38,16 @@ class HomeFragment : Fragment() {
         viewModel.homeInfo.observe(viewLifecycleOwner) {
             val concatAdapter = ConcatAdapter(
                 HeaderAdapter(),
-                InfoAdapter(it.sponsors),
-                EventAdapter(it.events)
+                InfoAdapter(it.sponsors, object : InfoAdapter.ItemHandler {
+                    override fun clickSponsor(sponsor: Sponsor) {
+                        ActivityHelper.startActionView(requireContext(), sponsor.homepage)
+                    }
+                }),
+                EventAdapter(it.events, object : EventAdapter.ItemHandler {
+                    override fun clickEvent(event: Event) {
+                        ActivityHelper.startActionView(requireContext(), event.url)
+                    }
+                })
             )
             binding.recyclerView.adapter = concatAdapter
         }
