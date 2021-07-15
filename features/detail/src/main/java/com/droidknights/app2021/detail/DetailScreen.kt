@@ -35,7 +35,7 @@ fun DetailScreen(
                 .fillMaxWidth()
                 .padding(24.dp)
         ) {
-            FlowRow(mainAxisSpacing = 6.dp) {
+            FlowRow(mainAxisSpacing = 6.dp, crossAxisSpacing = 6.dp) {
                 Tag(text = session.level.title, color = session.level.color.color)
                 session.tags.forEach { tag ->
                     Tag(text = tag.title, color = tag.color.color)
