@@ -31,7 +31,7 @@ object NetworkModule {
     fun provideRetrofit(
         okHttpClient: OkHttpClient
     ): Retrofit = Retrofit.Builder()
-        .baseUrl("https://github.com/droidknights/DroidKnights2021_App/tree/master/app/src/main/assets/")
+        .baseUrl("https://raw.githubusercontent.com/")
         .addConverterFactory(
             Json.asConverterFactory("application/json".toMediaType())
         )
