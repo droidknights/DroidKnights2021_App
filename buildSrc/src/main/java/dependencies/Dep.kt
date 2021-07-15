@@ -36,7 +36,7 @@ object Dep {
     }
 
     object Compose {
-        const val version = "1.0.0-rc01"
+        const val version = "1.0.0-rc02"
         const val ui = "androidx.compose.ui:ui:$version"
         const val material = "androidx.compose.material:material:$version"
         const val tooling = "androidx.compose.ui:ui-tooling:$version"
@@ -63,11 +63,14 @@ object Dep {
     }
 
     object Accompanist {
-        private const val version = "0.13.0"
-        const val coil = "com.google.accompanist:accompanist-coil:$version"
+        private const val version = "0.14.0"
         const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$version"
         const val pager = "com.google.accompanist:accompanist-pager:$version"
         const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
+    }
+
+    object coil {
+        const val compose = "io.coil-kt:coil-compose:1.3.0"
     }
 
     object Square {
