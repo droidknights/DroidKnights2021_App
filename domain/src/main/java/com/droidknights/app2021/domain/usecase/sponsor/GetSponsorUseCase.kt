@@ -1,17 +1,17 @@
-package com.droidknights.app2021.domain.session
+package com.droidknights.app2021.domain.usecase.sponsor
 
 import com.droidknights.app2021.data.ConferenceRepository
 import com.droidknights.app2021.domain.NonParamCoroutineUseCase
 import com.droidknights.app2021.shared.di.IoDispatcher
-import com.droidknights.app2021.shared.model.Session
+import com.droidknights.app2021.shared.model.Sponsor
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
-class GetSessionsUseCase @Inject constructor(
+class GetSponsorUseCase @Inject constructor(
     private val conferenceRepository: ConferenceRepository,
     @IoDispatcher dispatcher: CoroutineDispatcher,
-) : NonParamCoroutineUseCase<List<Session>>(dispatcher) {
-    override suspend fun execute(): List<Session> {
-        return conferenceRepository.getSessions()
+) : NonParamCoroutineUseCase<List<Sponsor>>(dispatcher) {
+    override suspend fun execute(): List<Sponsor> {
+        return conferenceRepository.getSponsors()
     }
 }

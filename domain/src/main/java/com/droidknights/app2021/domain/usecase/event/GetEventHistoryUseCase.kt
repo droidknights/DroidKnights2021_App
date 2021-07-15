@@ -1,4 +1,4 @@
-package com.droidknights.app2021.domain.event
+package com.droidknights.app2021.domain.usecase.event
 
 import com.droidknights.app2021.data.ConferenceRepository
 import com.droidknights.app2021.domain.NonParamCoroutineUseCase

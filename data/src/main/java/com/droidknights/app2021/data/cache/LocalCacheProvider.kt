@@ -1,45 +1,27 @@
 package com.droidknights.app2021.data.cache
 
-import com.droidknights.app2021.shared.model.*
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toInstant
+import com.droidknights.app2021.data.model.SessionContainer
+import com.droidknights.app2021.data.model.SessionData
+import com.droidknights.app2021.shared.di.AssetProvider
+import com.droidknights.app2021.shared.model.Event
+import com.droidknights.app2021.shared.model.Sponsor
 import kotlinx.datetime.toLocalDate
-import kotlinx.datetime.toLocalDateTime
+import kotlinx.serialization.json.Json
 import javax.inject.Inject
-import kotlin.random.Random
 
 class LocalCacheProvider @Inject constructor(
+    private val assetProvider: AssetProvider
 ) {
-    suspend fun getSessions(): List<Session> {
-        val random = Random(System.currentTimeMillis())
-        return mutableListOf<Session>().apply {
-            repeat(20) {
-                add(
-                    Session(
-                        title = "Session Title $it",
-                        content = "Content $it",
-                        speakers = listOf(
-                            Speaker(
-                                name = "발표자 $it",
-                                photoUrl = ""
-                            )
-                        ),
-                        level = Level("중급", color = "#E59B86"),
-                        tags = listOf(
-                            Tag(title = "Tag ${random.nextInt(10)}", color = "#897dad"),
-                            Tag(title = "Tag ${random.nextInt(10)}", color = "#92b9e9")
-                        ),
-                        room = "Track1",
-                        startTime = "2021-09-25T14:00:00.000Z"
-                            .toInstant()
-                            .toLocalDateTime(TimeZone.of("Asia/Seoul")),
-                        endTime = "2021-09-25T14:30:00.000Z"
-                            .toInstant()
-                            .toLocalDateTime(TimeZone.of("Asia/Seoul"))
-                    )
-                )
-            }
-        }
+    private val json = Json {
+        ignoreUnknownKeys = true
+    }
+
+    suspend fun getSessions(): List<SessionData> {
+        val data = json.decodeFromString(
+            SessionContainer.serializer(),
+            assetProvider.getRawSessions()
+        )
+        return data.sessions
     }
 
     suspend fun getEventHistory(): List<Event> {
