@@ -44,6 +44,7 @@ dependencies {
     implementation Dep.AndroidX.core
 
     implementation Dep.Kotlin.serialization
+    implementation Dep.Kotlin.dateTime
 
     implementation Dep.Dagger.hiltAndroid
     kapt Dep.Dagger.hiltCompiler
