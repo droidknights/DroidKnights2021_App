@@ -43,6 +43,7 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="16dp" />
 
+            <!-- TODO : Radius 8dp로 ImageView 노출 -->
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="36dp"
@@ -88,6 +89,7 @@
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@id/tvDesc" />
 
+            <!-- TODO: Auto-scroll RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sponsorList"
                 android:layout_width="0dp"

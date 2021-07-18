@@ -25,6 +25,7 @@ fun TextView.bindEventTitle(date: LocalDate) {
 
 @BindingAdapter("bindEventDate", "bindEndEvent")
 fun TextView.bindEventDate(date: LocalDate, isEndEvent: Boolean) {
+    // TODO: 종료되지 않은 이벤트 노출 개선
     text = if (isEndEvent) {
         "${date.year}년 ${date.monthNumber}월 ${date.dayOfMonth}일"
     } else {
