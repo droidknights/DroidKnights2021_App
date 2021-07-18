@@ -44,6 +44,8 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':shared')
+
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.activityCompose
     implementation Dep.AndroidX.fragment

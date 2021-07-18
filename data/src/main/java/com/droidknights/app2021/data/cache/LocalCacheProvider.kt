@@ -19,7 +19,7 @@ class LocalCacheProvider @Inject constructor(
     suspend fun getSessions(): List<SessionData> {
         val data = json.decodeFromString(
             SessionContainer.serializer(),
-            assetProvider.getRawSessions()
+            assetProvider.getRawSessions().value
         )
         return data.sessions
     }

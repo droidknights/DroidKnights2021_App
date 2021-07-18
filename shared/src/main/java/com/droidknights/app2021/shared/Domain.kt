@@ -1,5 +1,10 @@
 package com.droidknights.app2021.shared
 
-typealias HexColor = String
+import kotlinx.serialization.Serializable
 
-typealias JsonRawString = String
+@JvmInline
+value class JsonRawString(val value: String)
+
+@Serializable
+@JvmInline
+value class HexColor(val value: String)

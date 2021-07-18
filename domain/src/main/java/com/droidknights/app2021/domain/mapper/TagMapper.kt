@@ -4,7 +4,7 @@ import com.droidknights.app2021.shared.HexColor
 import com.droidknights.app2021.shared.model.Tag
 
 internal fun String.toTag(): Tag {
-    val color: HexColor = when (this) {
+    val color = when (this) {
         "기술", "Architecture" -> "#6EA8A8"
         "Framework" -> "#897DAD"
         "Kotlin" -> "#E59B86"
@@ -14,5 +14,5 @@ internal fun String.toTag(): Tag {
         "Flutter" -> "#9188B0"
         else -> "#ABC192"
     }
-    return Tag(this, color)
+    return Tag(this, HexColor(color))
 }

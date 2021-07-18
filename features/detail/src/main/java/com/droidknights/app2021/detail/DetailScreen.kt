@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.droidknights.app2021.shared.model.Session
 import com.droidknights.app2021.shared.model.Speaker
 import com.droidknights.app2021.ui.core.compose.layout.Tag
-import com.droidknights.app2021.ui.core.compose.util.color
+import com.droidknights.app2021.ui.core.compose.util.toColor
 import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
@@ -36,9 +36,9 @@ fun DetailScreen(
                 .padding(24.dp)
         ) {
             FlowRow(mainAxisSpacing = 6.dp, crossAxisSpacing = 6.dp) {
-                Tag(text = session.level.title, color = session.level.color.color)
+                Tag(text = session.level.title, color = session.level.color.toColor)
                 session.tags.forEach { tag ->
-                    Tag(text = tag.title, color = tag.color.color)
+                    Tag(text = tag.title, color = tag.color.toColor)
                 }
             }
             Spacer(modifier = Modifier.height(10.dp))
@@ -51,7 +51,7 @@ fun DetailScreen(
             Spacer(modifier = Modifier.height(18.dp))
             ProfilesInfo(speakers = session.speakers)
         }
-        Divider(modifier = Modifier.height(8.dp), color = "#F5F5F5".color)
+        Divider(modifier = Modifier.height(8.dp), color = "#F5F5F5".toColor)
 
         Column(
             modifier = Modifier
@@ -60,13 +60,13 @@ fun DetailScreen(
         ) {
             Text(
                 text = "내용",
-                color = "#2F2E32".color,
+                color = "#2F2E32".toColor,
                 fontSize = 16.sp
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = session.content,
-                color = "#9B9B9B".color,
+                color = "#9B9B9B".toColor,
                 fontSize = 14.sp
             )
         }

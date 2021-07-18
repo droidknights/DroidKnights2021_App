@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.droidknights.app2021.shared.model.Session
 import com.droidknights.app2021.ui.core.compose.layout.Tag
-import com.droidknights.app2021.ui.core.compose.util.color
+import com.droidknights.app2021.ui.core.compose.util.toColor
 import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
@@ -35,14 +35,14 @@ fun SessionUi(
         Spacer(modifier = Modifier.height(5.dp))
         Text(
             text = session.speakers.joinToString(separator = " · ", transform = { it.name }),
-            color = "#9A9A9A".color,
+            color = "#9A9A9A".toColor,
             fontSize = 14.sp,
         )
         Spacer(modifier = Modifier.height(8.dp))
         FlowRow(mainAxisSpacing = 6.dp, crossAxisSpacing = 6.dp) {
-            Tag(text = session.level.title, color = session.level.color.color)
+            Tag(text = session.level.title, color = session.level.color.toColor)
             session.tags.forEach { tag ->
-                Tag(text = tag.title, color = tag.color.color)
+                Tag(text = tag.title, color = tag.color.toColor)
             }
         }
     }

@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
-import com.droidknights.app2021.ui.core.compose.util.color
+import com.droidknights.app2021.ui.core.compose.util.toColor
 
 @Composable
 fun DetailAppBar(
@@ -31,7 +31,7 @@ fun DetailAppBar(
                 )
             }
             Text(
-                text = title, fontSize = 18.sp, color = "#2F2E32".color,
+                text = title, fontSize = 18.sp, color = "#2F2E32".toColor,
                 modifier = Modifier
                     .weight(1f)
                     .wrapContentWidth()
