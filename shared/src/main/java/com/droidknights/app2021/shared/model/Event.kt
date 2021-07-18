@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Event(
     val date: LocalDate,
-    val url: String,
+    val url: String = "",
     val isEndEvent: Boolean = true
 )

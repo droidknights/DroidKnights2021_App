@@ -1,3 +1,25 @@
 {
-
+  "events": [
+    {
+      "date": "2021-09-25",
+      "url": "https://droidknights.github.io/2021/",
+      "isEndEvent": false
+    },
+    {
+      "date": "2020-09-05",
+      "url": "https://droidknights.github.io/2020/"
+    },
+    {
+      "date": "2019-04-05",
+      "url": "https://droidknights.github.io/2019/"
+    },
+    {
+      "date": "2018-04-22",
+      "url": "https://droidknights.github.io/2018/"
+    },
+    {
+      "date": "2017-03-25",
+      "url": "https://droidknights.github.io/2017/"
+    }
+  ]
 }

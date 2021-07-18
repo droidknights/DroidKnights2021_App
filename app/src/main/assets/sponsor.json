@@ -1,3 +1,24 @@
 {
-
+  "sponsors": [
+    {
+      "name": "toss",
+      "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2020_App/master/androidapp/app/src/main/res/drawable-xxxhdpi/ic_sponsor_toss.png",
+      "homepage": "https://toss.im/"
+    },
+    {
+      "name": "헤이딜러",
+      "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2020_App/master/androidapp/app/src/main/res/drawable-xxxhdpi/ic_sponsor_heydealer.png",
+      "homepage": "https://dealer.heydealer.com/"
+    },
+    {
+      "name": "카카오페이",
+      "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2020_App/master/androidapp/app/src/main/res/drawable-xxxhdpi/ic_sponsor_kakaopay.png",
+      "homepage": "https://www.kakaopay.com/"
+    },
+    {
+      "name": "VCNC",
+      "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2020_App/master/androidapp/app/src/main/res/drawable-xxxhdpi/ic_sponsor_vcnc.png",
+      "homepage": "https://tadacareer.vcnc.co.kr/"
+    }
+  ]
 }
