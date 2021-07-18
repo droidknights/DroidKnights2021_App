@@ -40,16 +40,20 @@ class HomeFragment : Fragment() {
                 HeaderAdapter(),
                 InfoAdapter(it.sponsors, object : InfoAdapter.ItemHandler {
                     override fun clickSponsor(sponsor: Sponsor) {
+                        // TODO: androidx.browser:browser를 활용해 앱내에서 웹뷰 열기
                         ActivityHelper.startActionView(requireContext(), sponsor.homepage)
                     }
                 }),
                 EventAdapter(it.events, object : EventAdapter.ItemHandler {
                     override fun clickEvent(event: Event) {
+                        // TODO: androidx.browser:browser를 활용해 앱내에서 웹뷰 열기
                         ActivityHelper.startActionView(requireContext(), event.url)
                     }
                 })
             )
             binding.recyclerView.adapter = concatAdapter
+
+            // TODO: 이벤트 항목간의 Divider 추가
         }
     }
 }
