@@ -31,7 +31,7 @@ fun DetailAppBar(
                 )
             }
             Text(
-                text = title, fontSize = 18.sp, color = "#2F2E32".toColor,
+                text = title, fontSize = 18.sp, color = "#2F2E32".toColor(),
                 modifier = Modifier
                     .weight(1f)
                     .wrapContentWidth()

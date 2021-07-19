@@ -37,15 +37,15 @@ fun ScheduleScreen(
         ) {
             Text(
                 text = rooms[pagerState.currentPage],
-                color = "#2F2E32".toColor,
+                color = "#2F2E32".toColor(),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.weight(1f)
             )
             HorizontalPagerIndicator(
                 pagerState = pagerState,
-                activeColor = "#4cc786".toColor,
-                inactiveColor = "#4cc786".toColor.copy(alpha = 0.3f),
+                activeColor = "#4cc786".toColor(),
+                inactiveColor = "#4cc786".toColor().copy(alpha = 0.3f),
                 indicatorWidth = 10.dp
             )
         }
@@ -79,7 +79,7 @@ fun Schedules(
             )
             Divider(
                 modifier = Modifier.padding(horizontal = 24.dp),
-                color = "#EFEFEF".toColor
+                color = "#EFEFEF".toColor()
             )
         }
     }

@@ -35,14 +35,14 @@ fun SessionUi(
         Spacer(modifier = Modifier.height(5.dp))
         Text(
             text = session.speakers.joinToString(separator = " · ", transform = { it.name }),
-            color = "#9A9A9A".toColor,
+            color = "#9A9A9A".toColor(),
             fontSize = 14.sp,
         )
         Spacer(modifier = Modifier.height(8.dp))
         FlowRow(mainAxisSpacing = 6.dp, crossAxisSpacing = 6.dp) {
-            Tag(text = session.level.title, color = session.level.color.toColor)
+            Tag(text = session.level.title, color = session.level.color.toColor())
             session.tags.forEach { tag ->
-                Tag(text = tag.title, color = tag.color.toColor)
+                Tag(text = tag.title, color = tag.color.toColor())
             }
         }
     }
