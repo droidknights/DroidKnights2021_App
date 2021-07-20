@@ -25,5 +25,6 @@ class GetSessionsUseCase @Inject constructor(
                     endTime = it.endTime
                 )
             }
+        // TODO: 시간, 세션명 순으로 정렬
     }
 }
