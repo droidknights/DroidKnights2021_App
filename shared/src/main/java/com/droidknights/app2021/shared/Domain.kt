@@ -16,3 +16,9 @@ value class Level(val name: String)
 @Serializable
 @JvmInline
 value class Tag(val name: String)
+
+enum class Room {
+    Track1,
+    Track2,
+    Etc
+}

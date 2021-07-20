@@ -15,6 +15,7 @@ class LocalCacheProvider @Inject constructor(
 ) {
     private val json = Json {
         ignoreUnknownKeys = true
+        coerceInputValues = true
     }
 
     suspend fun getSessions(): List<SessionData> {

@@ -36,7 +36,7 @@ fun ScheduleScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = rooms[pagerState.currentPage],
+                text = rooms[pagerState.currentPage].name,
                 color = "#2F2E32".toColor(),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
