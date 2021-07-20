@@ -9,10 +9,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ScheduleViewModel @Inject constructor(
-    private val GetSessionsUseCase: GetSessionsUseCase
+    private val getSessionsUseCase: GetSessionsUseCase
 ) : ViewModel() {
     val sessions = liveData {
         emit(Result.Loading)
-        emit(GetSessionsUseCase())
+        emit(getSessionsUseCase())
     }
 }
