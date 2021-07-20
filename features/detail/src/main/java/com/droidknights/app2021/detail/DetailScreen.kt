@@ -18,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.droidknights.app2021.shared.ext.color
 import com.droidknights.app2021.shared.model.Session
 import com.droidknights.app2021.shared.model.Speaker
 import com.droidknights.app2021.ui.core.compose.layout.Tag
@@ -36,9 +37,9 @@ fun DetailScreen(
                 .padding(24.dp)
         ) {
             FlowRow(mainAxisSpacing = 6.dp, crossAxisSpacing = 6.dp) {
-                Tag(text = session.level.title, color = session.level.color.toColor())
+                Tag(text = session.level.name, color = session.level.color.toColor())
                 session.tags.forEach { tag ->
-                    Tag(text = tag.title, color = tag.color.toColor())
+                    Tag(text = tag.name, color = tag.color.toColor())
                 }
             }
             Spacer(modifier = Modifier.height(10.dp))

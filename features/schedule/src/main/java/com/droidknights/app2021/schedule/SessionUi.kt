@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.droidknights.app2021.shared.ext.color
 import com.droidknights.app2021.shared.model.Session
 import com.droidknights.app2021.ui.core.compose.layout.Tag
 import com.droidknights.app2021.ui.core.compose.util.toColor
@@ -40,9 +41,9 @@ fun SessionUi(
         )
         Spacer(modifier = Modifier.height(8.dp))
         FlowRow(mainAxisSpacing = 6.dp, crossAxisSpacing = 6.dp) {
-            Tag(text = session.level.title, color = session.level.color.toColor())
+            Tag(text = session.level.name, color = session.level.color.toColor())
             session.tags.forEach { tag ->
-                Tag(text = tag.title, color = tag.color.toColor())
+                Tag(text = tag.name, color = tag.color.toColor())
             }
         }
     }

@@ -2,8 +2,6 @@ package com.droidknights.app2021.domain.usecase.session
 
 import com.droidknights.app2021.data.ConferenceRepository
 import com.droidknights.app2021.domain.NonParamCoroutineUseCase
-import com.droidknights.app2021.domain.mapper.toLevel
-import com.droidknights.app2021.domain.mapper.toTag
 import com.droidknights.app2021.shared.di.IoDispatcher
 import com.droidknights.app2021.shared.model.Session
 import kotlinx.coroutines.CoroutineDispatcher
@@ -20,10 +18,8 @@ class GetSessionsUseCase @Inject constructor(
                     title = it.title,
                     content = it.content,
                     speakers = it.speakers,
-                    level = it.level.toLevel(),
-                    tags = it.tags.map { tag ->
-                        tag.toTag()
-                    },
+                    level = it.level,
+                    tags = it.tags,
                     room = it.room,
                     startTime = it.startTime,
                     endTime = it.endTime
