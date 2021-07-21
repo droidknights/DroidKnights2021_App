@@ -77,7 +77,7 @@
         "크로스플랫폼",
         "Flutter"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -95,7 +95,7 @@
         "Architecture",
         "경험"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -112,7 +112,7 @@
       "tags": [
         "기타"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T10:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -129,7 +129,7 @@
       "tags": [
         "기타"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -146,7 +146,7 @@
       "tags": [
         "기타"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -163,7 +163,7 @@
       "tags": [
         "기타"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -180,7 +180,7 @@
       "tags": [
         "기타"
       ],
-      "room": null,
+      "room": "Track1",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -203,7 +203,7 @@
         "크로스플랫폼",
         "Flutter"
       ],
-      "room": null,
+      "room": "Track2",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -221,7 +221,7 @@
         "Architecture",
         "경험"
       ],
-      "room": null,
+      "room": "Track2",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     },
@@ -238,7 +238,7 @@
       "tags": [
         "기타"
       ],
-      "room": null,
+      "room": "Track2",
       "startTime": "2021-09-25T14:00:00.000",
       "endTime": "2021-09-25T14:30:00.000"
     }
