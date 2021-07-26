@@ -66,7 +66,7 @@ fun DetailScreen(
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = session.content,
+                text = session.content.joinToString(separator = System.lineSeparator()),
                 color = "#9B9B9B".toColor(),
                 fontSize = 14.sp
             )

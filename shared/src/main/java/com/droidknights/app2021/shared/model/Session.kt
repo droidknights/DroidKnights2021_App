@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Session(
     val title: String,
-    val content: String,
+    val content: List<String>,
     val speakers: List<Speaker>,
     val level: Level,
     val tags: List<Tag>,
