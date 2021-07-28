@@ -1,4 +1,4 @@
-package com.droidknights.app2021.home.util
+package com.droidknights.app2021.home.util.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,8 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.droidknights.app2021.home.util.DataBindingViewHolder
 
-abstract class DataBindingAdapter<T>(
+abstract class ListBindingAdapter<T>(
     diffCallback: DiffUtil.ItemCallback<T>
 ) : ListAdapter<T, DataBindingViewHolder<T>>(diffCallback) {
 

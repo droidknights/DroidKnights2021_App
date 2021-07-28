@@ -1,16 +1,19 @@
 package com.droidknights.app2021.home.ui.adapter
 
-import androidx.recyclerview.widget.DiffUtil
 import com.droidknights.app2021.home.BR
 import com.droidknights.app2021.home.R
-import com.droidknights.app2021.home.util.DataBindingAdapter
 import com.droidknights.app2021.home.util.DataBindingViewHolder
+import com.droidknights.app2021.home.util.recyclerview.ItemDiffCallback
+import com.droidknights.app2021.home.util.recyclerview.ListBindingAdapter
 import com.droidknights.app2021.shared.model.Event
 
 internal class EventAdapter(
     events: List<Event>,
     private val itemHandler: ItemHandler
-) : DataBindingAdapter<Event>(DiffCallback()) {
+) : ListBindingAdapter<Event>(ItemDiffCallback(
+    onItemsTheSame = { old, new -> old.date == new.date },
+    onContentsTheSame = { old, new -> old == new }
+)) {
     init {
         submitList(events)
     }
@@ -26,15 +29,5 @@ internal class EventAdapter(
 
     interface ItemHandler {
         fun clickEvent(event: Event)
-    }
-
-    private class DiffCallback : DiffUtil.ItemCallback<Event>() {
-        override fun areItemsTheSame(oldItem: Event, newItem: Event): Boolean {
-            return oldItem.date == newItem.date
-        }
-
-        override fun areContentsTheSame(oldItem: Event, newItem: Event): Boolean {
-            return oldItem == newItem
-        }
     }
 }

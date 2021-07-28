@@ -1,16 +1,19 @@
 package com.droidknights.app2021.home.ui.adapter
 
-import androidx.recyclerview.widget.DiffUtil
 import com.droidknights.app2021.home.BR
 import com.droidknights.app2021.home.R
-import com.droidknights.app2021.home.util.DataBindingAdapter
 import com.droidknights.app2021.home.util.DataBindingViewHolder
+import com.droidknights.app2021.home.util.recyclerview.ItemDiffCallback
+import com.droidknights.app2021.home.util.recyclerview.ListBindingAdapter
 import com.droidknights.app2021.shared.model.Sponsor
 
 internal class InfoAdapter(
     sponsors: List<Sponsor>,
     private val itemHandler: ItemHandler
-) : DataBindingAdapter<InfoItem>(DiffCallback()) {
+) : ListBindingAdapter<InfoItem>(ItemDiffCallback(
+    onItemsTheSame = { old, new -> old.sponsors == new.sponsors },
+    onContentsTheSame = { old, new -> old == new }
+)) {
 
     private val sponsorItemHandler = object : SponsorAdapter.ItemHandler {
         override fun clickSponsor(sponsor: Sponsor) {
@@ -33,16 +36,6 @@ internal class InfoAdapter(
 
     interface ItemHandler {
         fun clickSponsor(sponsor: Sponsor)
-    }
-
-    private class DiffCallback : DiffUtil.ItemCallback<InfoItem>() {
-        override fun areItemsTheSame(oldItem: InfoItem, newItem: InfoItem): Boolean {
-            return oldItem.sponsors == newItem.sponsors
-        }
-
-        override fun areContentsTheSame(oldItem: InfoItem, newItem: InfoItem): Boolean {
-            return oldItem.sponsors == newItem.sponsors
-        }
     }
 }
 
