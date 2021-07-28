@@ -56,10 +56,10 @@ object Dep {
     }
 
     object Dagger {
-        const val hiltVersion = "2.37"
-        const val hiltAndroid = "com.google.dagger:hilt-android:$hiltVersion"
-        const val hiltCompiler = "com.google.dagger:hilt-compiler:$hiltVersion"
-        const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        private const val daggerVersion = "2.38.1"
+        const val hiltAndroid = "com.google.dagger:hilt-android:$daggerVersion"
+        const val hiltCompiler = "com.google.dagger:hilt-compiler:$daggerVersion"
+        const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$daggerVersion"
     }
 
     object Accompanist {
