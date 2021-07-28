@@ -11,7 +11,7 @@ object Versions {
 }
 
 object Dep {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-rc01"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0"
 
     object AndroidX {
         const val core = "androidx.core:core-ktx:1.6.0"
