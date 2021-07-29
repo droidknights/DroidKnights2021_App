@@ -23,13 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
-import com.droidknights.app2021.shared.model.Contributor
+import com.droidknights.app2021.shared.model.User
 import com.droidknights.app2021.ui.core.compose.util.toColor
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ContributorScreen(
-    contributors: List<Contributor>
+    contributors: List<User>
 ) {
     Scaffold(
         topBar = {
@@ -63,7 +63,7 @@ fun ContributorScreen(
 @Composable
 fun ContributorProfile(
     modifier: Modifier = Modifier,
-    contributor: Contributor
+    contributor: User
 ) {
     Card(
         modifier = modifier.aspectRatio(1f),
@@ -81,7 +81,7 @@ fun ContributorProfile(
                     .aspectRatio(1f)
                     .clip(CircleShape),
                 painter = rememberImagePainter(
-                    data = contributor.profileUrl,
+                    data = contributor.photoUrl,
                     builder = {
                         crossfade(true)
                         placeholder(R.drawable.ic_black_android_24)
@@ -110,7 +110,7 @@ fun ContributorProfile(
 fun ContributorsProfilePreview() {
     val list = buildList {
         repeat(5) {
-            add(Contributor("Droid Kngiths 2021", ""))
+            add(User("Droid Kngiths 2021", ""))
         }
     }
     Surface {
@@ -123,7 +123,7 @@ fun ContributorsProfilePreview() {
 fun ContributorProfilePreview() {
     Surface {
         ContributorProfile(
-            contributor = Contributor("Droid Kngiths 2021", "")
+            contributor = User("Droid Kngiths 2021", "")
         )
     }
 }

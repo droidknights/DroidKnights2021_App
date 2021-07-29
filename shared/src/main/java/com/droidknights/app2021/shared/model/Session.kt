@@ -10,16 +10,10 @@ import kotlinx.serialization.Serializable
 data class Session(
     val title: String,
     val content: List<String>,
-    val speakers: List<Speaker>,
+    val speakers: List<User>,
     val level: Level,
     val tags: List<Tag>,
     val room: Room,
     val startTime: LocalDateTime,
     val endTime: LocalDateTime,
-)
-
-@Serializable
-data class Speaker(
-    val name: String,
-    val photoUrl: String
 )

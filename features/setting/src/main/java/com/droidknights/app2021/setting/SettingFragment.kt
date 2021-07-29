@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.droidknights.app2021.shared.model.Contributor
+import com.droidknights.app2021.shared.model.User
 import com.droidknights.app2021.ui.core.compose.setThemeContent
 
 class SettingFragment : Fragment() {
@@ -38,7 +38,7 @@ fun SettingContainer() {
         composable("contributor") {
             val list = buildList {
                 repeat(5) {
-                    add(Contributor("Droid Kngiths 2021", ""))
+                    add(User("Droid Kngiths 2021", ""))
                 }
             }
             ContributorScreen(list)

@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.droidknights.app2021.shared.ext.color
 import com.droidknights.app2021.shared.model.Session
-import com.droidknights.app2021.shared.model.Speaker
+import com.droidknights.app2021.shared.model.User
 import com.droidknights.app2021.ui.core.compose.layout.Tag
 import com.droidknights.app2021.ui.core.compose.util.toColor
 import com.google.accompanist.flowlayout.FlowRow
@@ -77,7 +77,7 @@ fun DetailScreen(
 @Composable
 fun ProfilesInfo(
     modifier: Modifier = Modifier,
-    speakers: List<Speaker>
+    speakers: List<User>
 ) {
     Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
         ProfileImages(speakers)
@@ -88,7 +88,7 @@ fun ProfilesInfo(
 
 @Composable
 fun ProfileImages(
-    speakers: List<Speaker>
+    speakers: List<User>
 ) {
     ProfileOverLayout {
         repeat(speakers.size) { index ->

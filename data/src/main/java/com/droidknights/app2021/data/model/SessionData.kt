@@ -3,7 +3,7 @@ package com.droidknights.app2021.data.model
 import com.droidknights.app2021.shared.Level
 import com.droidknights.app2021.shared.Room
 import com.droidknights.app2021.shared.Tag
-import com.droidknights.app2021.shared.model.Speaker
+import com.droidknights.app2021.shared.model.User
 import kotlinx.datetime.LocalDateTime
 import kotlinx.serialization.Serializable
 
@@ -16,7 +16,7 @@ internal data class SessionContainer(
 data class SessionData(
     val title: String,
     val content: List<String>,
-    val speakers: List<Speaker>,
+    val speakers: List<User>,
     val level: Level,
     val tags: List<Tag> = emptyList(),
     // TODO: Track1, track1은 Room.Track1으로 매칭되어야한다.

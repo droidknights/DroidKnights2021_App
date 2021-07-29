@@ -3,7 +3,7 @@ package com.droidknights.app2021.shared.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Contributor(
+data class User(
     val name: String,
-    val profileUrl: String
+    val photoUrl: String
 )
