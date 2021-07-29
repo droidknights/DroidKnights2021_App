@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting
+package com.droidknights.app2021.setting.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,11 +11,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.droidknights.app2021.setting.ScreenAction
 import com.droidknights.app2021.ui.core.compose.util.toColor
 
 @Composable
-fun SettingScreen(
-    onContributorClicked: () -> Unit
+internal fun SettingScreen(
+    onScreenAction: (ScreenAction) -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -30,19 +31,27 @@ fun SettingScreen(
         }
     ) { innerPadding ->
         Column(Modifier.padding(innerPadding)) {
-            Text(
-                text = "Contributors",
-                color = Color.Black,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
+            CellItem("Speaker") {
+                onScreenAction(ScreenAction.Speaker)
+            }
+            Divider(
+                color = "#EFEFEF".toColor(),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .heightIn(min = 62.dp)
-                    .clickable { onContributorClicked() }
                     .padding(horizontal = 24.dp)
-                    .wrapContentHeight()
+                    .height(1.dp)
             )
-
+            CellItem("Contributors") {
+                onScreenAction(ScreenAction.Contributor)
+            }
+            Divider(
+                color = "#EFEFEF".toColor(),
+                modifier = Modifier
+                    .padding(horizontal = 24.dp)
+                    .height(1.dp)
+            )
+            CellItem("Staff") {
+                onScreenAction(ScreenAction.Staff)
+            }
             Divider(
                 color = "#EFEFEF".toColor(),
                 modifier = Modifier
@@ -51,4 +60,23 @@ fun SettingScreen(
             )
         }
     }
+}
+
+@Composable
+private fun CellItem(
+    text: String,
+    onClicked: () -> Unit
+) {
+    Text(
+        text = text,
+        color = Color.Black,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = 62.dp)
+            .clickable { onClicked() }
+            .padding(horizontal = 24.dp)
+            .wrapContentHeight()
+    )
 }

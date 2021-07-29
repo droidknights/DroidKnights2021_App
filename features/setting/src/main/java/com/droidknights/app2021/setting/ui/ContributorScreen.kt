@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting
+package com.droidknights.app2021.setting.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -23,27 +23,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
+import com.droidknights.app2021.setting.R
 import com.droidknights.app2021.shared.model.User
 import com.droidknights.app2021.ui.core.compose.util.toColor
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ContributorScreen(
+internal fun ContributorScreen(
     contributors: List<User>
 ) {
     Scaffold(
-        topBar = {
-            Column(
-                Modifier.padding(start = 24.dp, top = 24.dp, end = 24.dp, bottom = 14.dp)
-            ) {
-                Text(
-                    text = "Contributors",
-                    color = "#2F2E32".toColor(),
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-        }
+        topBar = { SettingAppBar("Contributors") }
     ) { innerPadding ->
         LazyVerticalGrid(
             cells = GridCells.Fixed(3),
@@ -52,7 +42,7 @@ fun ContributorScreen(
         ) {
             items(contributors) { contributor ->
                 ContributorProfile(
-                    modifier = Modifier.padding(10.dp),
+                    modifier = Modifier.padding(8.dp),
                     contributor = contributor
                 )
             }
@@ -61,7 +51,7 @@ fun ContributorScreen(
 }
 
 @Composable
-fun ContributorProfile(
+private fun ContributorProfile(
     modifier: Modifier = Modifier,
     contributor: User
 ) {

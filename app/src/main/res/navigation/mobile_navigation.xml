@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/navigation_setting"
-        android:name="com.droidknights.app2021.setting.SettingFragment"
+        android:name="com.droidknights.app2021.setting.ui.SettingFragment"
         android:label="@string/title_setting"
         tools:layout="@layout/fragment_setting" />
 </navigation>
