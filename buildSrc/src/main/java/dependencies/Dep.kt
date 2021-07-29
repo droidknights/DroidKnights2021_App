@@ -16,7 +16,8 @@ object Dep {
     object AndroidX {
         const val core = "androidx.core:core-ktx:1.6.0"
         const val appcompat = "androidx.appcompat:appcompat:1.3.0"
-        const val activity = "androidx.activity:activity-ktx:1.3.0-rc01"
+        const val activity = "androidx.activity:activity-ktx:1.3.0"
+        const val activityCompose = "androidx.activity:activity-compose:1.3.0"
         const val fragment = "androidx.fragment:fragment-ktx:1.3.5"
         const val material = "com.google.android.material:material:1.4.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
@@ -25,8 +26,6 @@ object Dep {
         private const val lifecycleVersion = "2.3.1"
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
         const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-
-        const val activityCompose = "androidx.activity:activity-compose:1.3.0-rc01"
 
         object Navigation {
             private const val version = "2.4.0-alpha05"
@@ -37,7 +36,7 @@ object Dep {
     }
 
     object Compose {
-        const val version = "1.0.0-rc02"
+        const val version = "1.0.0"
         const val ui = "androidx.compose.ui:ui:$version"
         const val material = "androidx.compose.material:material:$version"
         const val tooling = "androidx.compose.ui:ui-tooling:$version"
@@ -64,14 +63,14 @@ object Dep {
     }
 
     object Accompanist {
-        private const val version = "0.14.0"
+        private const val version = "0.15.0"
         const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$version"
         const val pager = "com.google.accompanist:accompanist-pager:$version"
         const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
     object coil {
-        const val compose = "io.coil-kt:coil-compose:1.3.0"
+        const val compose = "io.coil-kt:coil-compose:1.3.1"
     }
 
     object Square {
