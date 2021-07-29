@@ -14,10 +14,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberImagePainter
 import com.droidknights.app2021.shared.ext.color
 import com.droidknights.app2021.shared.model.Session
 import com.droidknights.app2021.shared.model.Speaker
@@ -91,9 +91,16 @@ fun ProfileImages(
     speakers: List<Speaker>
 ) {
     ProfileOverLayout {
-        speakers.forEach {
+        repeat(speakers.size) { index ->
             Image(
-                painter = painterResource(id = R.drawable.ic_android_92b9e9_24),
+                painter = rememberImagePainter(
+                    data = speakers[index].photoUrl,
+                    builder = {
+                        crossfade(true)
+                        placeholder(R.drawable.ic_android_92b9e9_24)
+                        error(R.drawable.ic_android_92b9e9_24)
+                    }
+                ),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(35.dp)
