@@ -14,8 +14,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.droidknights.app2021.setting.Route
 import com.droidknights.app2021.setting.ScreenAction
-import com.droidknights.app2021.shared.model.User
 import com.droidknights.app2021.shared.result.Result
+import com.droidknights.app2021.shared.result.data
+import com.droidknights.app2021.ui.core.compose.layout.FullScreenLoading
+import com.droidknights.app2021.ui.core.compose.layout.LoadingContent
 import com.droidknights.app2021.ui.core.compose.setThemeContent
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,7 +33,6 @@ class SettingFragment : Fragment() {
     }
 }
 
-@OptIn(ExperimentalStdlibApi::class)
 @Composable
 fun SettingContainer(
     viewModel: SettingViewModel = viewModel()
@@ -50,19 +51,30 @@ fun SettingContainer(
         }
         composable(Route.Speaker.destination) {
             val result by viewModel.speakers.observeAsState()
-            SpeakerScreen(result?.data.orEmpty())
+            LoadingContent(
+                loading = result is Result.Loading,
+                loadingContent = { FullScreenLoading() }
+            ) {
+                SpeakerScreen(result?.data.orEmpty())
+            }
         }
         composable(Route.Contributor.destination) {
-            val list = buildList {
-                repeat(5) {
-                    add(User("Droid Kngiths 2021", ""))
-                }
+            val result by viewModel.contributors.observeAsState()
+            LoadingContent(
+                loading = result is Result.Loading,
+                loadingContent = { FullScreenLoading() }
+            ) {
+                ContributorScreen(result?.data.orEmpty())
             }
-            ContributorScreen(list)
         }
         composable(Route.Staff.destination) {
             val result by viewModel.staff.observeAsState()
-            StaffScreen(result?.data.orEmpty())
+            LoadingContent(
+                loading = result is Result.Loading,
+                loadingContent = { FullScreenLoading() }
+            ) {
+                StaffScreen(result?.data.orEmpty())
+            }
         }
     }
 }
