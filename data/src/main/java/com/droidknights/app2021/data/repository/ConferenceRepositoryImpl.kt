@@ -6,6 +6,7 @@ import com.droidknights.app2021.data.cache.LocalCacheProvider
 import com.droidknights.app2021.data.model.SessionData
 import com.droidknights.app2021.shared.model.Event
 import com.droidknights.app2021.shared.model.Sponsor
+import com.droidknights.app2021.shared.model.User
 import javax.inject.Inject
 
 class ConferenceRepositoryImpl @Inject constructor(
@@ -28,5 +29,9 @@ class ConferenceRepositoryImpl @Inject constructor(
         return runCatching {
             conferenceApi.getSponsors()
         }.getOrDefault(localCacheProvider.getSponsors())
+    }
+
+    override suspend fun getStaff(): List<User> {
+        return localCacheProvider.getStaff()
     }
 }

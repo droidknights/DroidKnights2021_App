@@ -8,4 +8,6 @@ interface AssetProvider {
     suspend fun getRawEventHistory(): JsonRawString
 
     suspend fun getRawSponsors(): JsonRawString
+
+    suspend fun getRawStaff(): JsonRawString
 }

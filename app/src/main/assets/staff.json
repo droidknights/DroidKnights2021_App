@@ -1,0 +1,32 @@
+{
+  "staff": [
+    {
+      "name": "이승민",
+      "photoUrl": ""
+    },
+    {
+      "name": "김나연",
+      "photoUrl": ""
+    },
+    {
+      "name": "김지영",
+      "photoUrl": ""
+    },
+    {
+      "name": "pluu",
+      "photoUrl": "https://pbs.twimg.com/profile_images/683256802704687104/QnjrPuLj_400x400.jpg"
+    },
+    {
+      "name": "박상권",
+      "photoUrl": ""
+    },
+    {
+      "name": "이영찬",
+      "photoUrl": ""
+    },
+    {
+      "name": "정석준",
+      "photoUrl": ""
+    }
+  ]
+}

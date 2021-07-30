@@ -11,14 +11,22 @@ class CacheAssetLoader @Inject constructor(
     @ApplicationContext private val context: Context
 ) : AssetProvider {
     override suspend fun getRawSessions(): JsonRawString {
-        return JsonRawString(AssetUtil.loadAsset(context, "sessions.json"))
+        return getJsonRawString("sessions.json")
     }
 
     override suspend fun getRawEventHistory(): JsonRawString {
-        return JsonRawString(AssetUtil.loadAsset(context, "event.json"))
+        return getJsonRawString("event.json")
     }
 
     override suspend fun getRawSponsors(): JsonRawString {
-        return JsonRawString(AssetUtil.loadAsset(context, "sponsor.json"))
+        return getJsonRawString("sponsor.json")
+    }
+
+    override suspend fun getRawStaff(): JsonRawString {
+        return getJsonRawString("staff.json")
+    }
+
+    private fun getJsonRawString(fileName: String): JsonRawString {
+        return JsonRawString(AssetUtil.loadAsset(context, fileName))
     }
 }
