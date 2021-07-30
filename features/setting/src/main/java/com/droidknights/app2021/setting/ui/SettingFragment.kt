@@ -49,31 +49,73 @@ fun SettingContainer(
             }
         }
         composable(Route.Speaker.destination) {
-            val result by viewModel.speakers.observeAsState(UiState.loading())
-            LoadingContent(
-                loading = result.initialLoad,
-                loadingContent = { FullScreenLoading() }
-            ) {
-                SpeakerScreen(result.getOrThrow())
-            }
+            SpeakerContainer(
+                viewModel = viewModel,
+                onBackAction = { navController.navigateUp() }
+            )
         }
         composable(Route.Contributor.destination) {
-            val result by viewModel.contributors.observeAsState(UiState.loading())
-            LoadingContent(
-                loading = result.initialLoad,
-                loadingContent = { FullScreenLoading() }
-            ) {
-                ContributorScreen(result.getOrThrow())
-            }
+            ContributorContainer(
+                viewModel = viewModel,
+                onBackAction = { navController.navigateUp() }
+            )
         }
         composable(Route.Staff.destination) {
-            val result by viewModel.staff.observeAsState(UiState.loading())
-            LoadingContent(
-                loading = result.initialLoad,
-                loadingContent = { FullScreenLoading() }
-            ) {
-                StaffScreen(result.getOrThrow())
-            }
+            StaffContainer(
+                viewModel = viewModel,
+                onBackAction = { navController.navigateUp() }
+            )
         }
+    }
+}
+
+@Composable
+private fun SpeakerContainer(
+    viewModel: SettingViewModel = viewModel(),
+    onBackAction: () -> Unit
+) {
+    val result by viewModel.speakers.observeAsState(UiState.loading())
+    LoadingContent(
+        loading = result.initialLoad,
+        loadingContent = { FullScreenLoading() }
+    ) {
+        SpeakerScreen(
+            speakers = result.getOrThrow(),
+            onBackAction = onBackAction
+        )
+    }
+}
+
+@Composable
+private fun ContributorContainer(
+    viewModel: SettingViewModel = viewModel(),
+    onBackAction: () -> Unit
+) {
+    val result by viewModel.contributors.observeAsState(UiState.loading())
+    LoadingContent(
+        loading = result.initialLoad,
+        loadingContent = { FullScreenLoading() }
+    ) {
+        ContributorScreen(
+            contributors = result.getOrThrow(),
+            onBackAction = onBackAction
+        )
+    }
+}
+
+@Composable
+private fun StaffContainer(
+    viewModel: SettingViewModel = viewModel(),
+    onBackAction: () -> Unit
+) {
+    val result by viewModel.staff.observeAsState(UiState.loading())
+    LoadingContent(
+        loading = result.initialLoad,
+        loadingContent = { FullScreenLoading() }
+    ) {
+        StaffScreen(
+            staffs = result.getOrThrow(),
+            onBackAction = onBackAction
+        )
     }
 }

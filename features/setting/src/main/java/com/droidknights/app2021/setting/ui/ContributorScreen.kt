@@ -7,10 +7,9 @@ import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,10 +26,23 @@ import com.droidknights.app2021.shared.model.User
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 internal fun ContributorScreen(
-    contributors: List<User>
+    contributors: List<User>,
+    onBackAction: () -> Unit
 ) {
     Scaffold(
-        topBar = { SettingAppBar("Contributors") }
+        topBar = {
+            SettingAppBar(
+                title = "Contributors",
+                navigationIcon = {
+                    IconButton(onClick = onBackAction) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack,
+                            contentDescription = null
+                        )
+                    }
+                }
+            )
+        }
     ) { innerPadding ->
         LazyVerticalGrid(
             cells = GridCells.Fixed(3),
@@ -93,7 +105,7 @@ fun ContributorsProfilePreview() {
         }
     }
     Surface {
-        ContributorScreen(list)
+        ContributorScreen(list) {}
     }
 }
 
