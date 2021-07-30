@@ -5,8 +5,9 @@ import androidx.lifecycle.liveData
 import com.droidknights.app2021.domain.usecase.contributor.GetContributorsUseCase
 import com.droidknights.app2021.domain.usecase.session.GetSessionsUseCase
 import com.droidknights.app2021.domain.usecase.staff.GetStaffUseCase
-import com.droidknights.app2021.shared.result.Result
 import com.droidknights.app2021.shared.result.data
+import com.droidknights.app2021.ui.core.compose.extension.toUiState
+import com.droidknights.app2021.ui.core.compose.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -17,22 +18,22 @@ class SettingViewModel @Inject constructor(
     private val getContributorsUseCase: GetContributorsUseCase
 ) : ViewModel() {
     val speakers = liveData {
-        emit(Result.Loading)
+        emit(UiState.loading())
         val users = getSessionsUseCase().data.orEmpty()
             .flatMap {
                 it.speakers
             }.distinct()
             .sortedBy { it.name }
-        emit(Result.Success(users))
+        emit(UiState.success(users))
     }
 
     val staff = liveData {
-        emit(Result.Loading)
-        emit(getStaffUseCase())
+        emit(UiState.loading())
+        emit(getStaffUseCase().toUiState())
     }
 
     val contributors = liveData {
-        emit(Result.Loading)
+        emit(UiState.loading())
         val users = getContributorsUseCase(
             GetContributorsUseCase.Param(
                 "droidknights",
@@ -40,6 +41,6 @@ class SettingViewModel @Inject constructor(
                 1
             )
         ).data.orEmpty()
-        emit(Result.Success(users))
+        emit(UiState.success(users))
     }
 }
