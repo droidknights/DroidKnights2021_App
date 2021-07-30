@@ -49,12 +49,12 @@ fun SettingContainer(
             }
         }
         composable(Route.Speaker.destination) {
-            val list = buildList {
-                repeat(20) {
-                    add(User("Droid Kngiths 2021", "", "회사명", "링크"))
+            val result by viewModel.speakers.observeAsState()
+            result?.let {
+                if (it is Result.Success) {
+                    SpeakerScreen(it.data)
                 }
             }
-            SpeakerScreen(list)
         }
         composable(Route.Contributor.destination) {
             val list = buildList {

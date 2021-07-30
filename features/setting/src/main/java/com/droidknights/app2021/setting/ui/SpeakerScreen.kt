@@ -1,7 +1,6 @@
 package com.droidknights.app2021.setting.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
@@ -16,14 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberImagePainter
-import com.droidknights.app2021.setting.R
+import com.droidknights.app2021.setting.ui.compose.NetworkImage
 import com.droidknights.app2021.shared.model.User
 import com.droidknights.app2021.ui.core.compose.util.toColor
 
@@ -61,24 +58,16 @@ private fun SpeakerProfile(
         elevation = 4.dp
     ) {
         Column(
-            modifier = Modifier                .padding(12.dp),
+            modifier = Modifier.padding(12.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
+            NetworkImage(
+                imageUrl = user.photoUrl,
+                nonSuccessTintColor = "#43B1B3".toColor(),
                 modifier = Modifier
                     .weight(1f)
                     .aspectRatio(1f)
-                    .clip(CircleShape),
-                painter = rememberImagePainter(
-                    data = user.photoUrl,
-                    builder = {
-                        crossfade(true)
-                        placeholder(R.drawable.ic_black_android_24)
-                        error(R.drawable.ic_black_android_24)
-                    },
-                ),
-                colorFilter = ColorFilter.tint(color = "#43B1B3".toColor()),
-                contentDescription = null
+                    .clip(CircleShape)
             )
             Column(
                 modifier = Modifier.padding(8.dp),
