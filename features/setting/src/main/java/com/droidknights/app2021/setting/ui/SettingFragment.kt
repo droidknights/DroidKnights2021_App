@@ -50,11 +50,7 @@ fun SettingContainer(
         }
         composable(Route.Speaker.destination) {
             val result by viewModel.speakers.observeAsState()
-            result?.let {
-                if (it is Result.Success) {
-                    SpeakerScreen(it.data)
-                }
-            }
+            SpeakerScreen(result?.data.orEmpty())
         }
         composable(Route.Contributor.destination) {
             val list = buildList {
@@ -66,11 +62,7 @@ fun SettingContainer(
         }
         composable(Route.Staff.destination) {
             val result by viewModel.staff.observeAsState()
-            result?.let {
-                if (it is Result.Success) {
-                    StaffScreen(it.data)
-                }
-            }
+            StaffScreen(result?.data.orEmpty())
         }
     }
 }
