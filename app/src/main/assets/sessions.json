@@ -3,16 +3,7 @@
     {
       "title": "Keynote",
       "content": [],
-      "speakers": [
-        {
-          "name": "발표자1",
-          "photoUrl": ""
-        },
-        {
-          "name": "발표자2",
-          "photoUrl": ""
-        }
-      ],
+      "speakers": [],
       "level": "기타",
       "tags": [
         "키노트"
@@ -284,7 +275,7 @@
       "speakers": [
         {
           "name": "pluu",
-          "photoUrl": ""
+          "photoUrl": "https://pbs.twimg.com/profile_images/683256802704687104/QnjrPuLj_400x400.jpg"
         }
       ],
       "level": "초급",

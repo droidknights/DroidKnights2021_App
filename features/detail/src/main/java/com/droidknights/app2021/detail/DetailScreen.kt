@@ -134,7 +134,7 @@ fun ProfileOverLayout(
 
         layout(
             width = layoutWidth,
-            height = placeables.maxOf { it.height }
+            height = placeables.maxOfOrNull { it.height } ?: 0
         ) {
             var xPosition = 0
 
