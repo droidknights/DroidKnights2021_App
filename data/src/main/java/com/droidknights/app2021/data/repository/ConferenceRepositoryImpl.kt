@@ -2,6 +2,7 @@ package com.droidknights.app2021.data.repository
 
 import com.droidknights.app2021.data.ConferenceRepository
 import com.droidknights.app2021.data.api.ConferenceApi
+import com.droidknights.app2021.data.api.GithubApi
 import com.droidknights.app2021.data.cache.LocalCacheProvider
 import com.droidknights.app2021.data.model.SessionData
 import com.droidknights.app2021.shared.model.Event
@@ -11,6 +12,7 @@ import javax.inject.Inject
 
 class ConferenceRepositoryImpl @Inject constructor(
     private val conferenceApi: ConferenceApi,
+    private val githubApi: GithubApi,
     private val localCacheProvider: LocalCacheProvider
 ) : ConferenceRepository {
     override suspend fun getEventHistory(): List<Event> {
@@ -32,6 +34,22 @@ class ConferenceRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getStaff(): List<User> {
-        return localCacheProvider.getStaff()
+        return runCatching {
+            conferenceApi.getStaff()
+        }.getOrDefault(localCacheProvider.getStaff())
+    }
+
+    override suspend fun getContributors(
+        owner: String,
+        name: String,
+        pageNo: Int
+    ): List<User> {
+        return githubApi.getContributors(owner, name, pageNo)
+            .map {
+                User(
+                    name = it.name,
+                    photoUrl = it.photoUrl
+                )
+            }
     }
 }

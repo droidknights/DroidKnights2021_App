@@ -1,14 +1,12 @@
 package com.droidknights.app2021.data.di
 
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Converter
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
@@ -29,12 +27,11 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(
-        okHttpClient: OkHttpClient
+        okHttpClient: OkHttpClient,
+        converterFactory: Converter.Factory
     ): Retrofit = Retrofit.Builder()
         .baseUrl("https://raw.githubusercontent.com/")
-        .addConverterFactory(
-            Json.asConverterFactory("application/json".toMediaType())
-        )
+        .addConverterFactory(converterFactory)
         .client(okHttpClient)
         .build()
 }

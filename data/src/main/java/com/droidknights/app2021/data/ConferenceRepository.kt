@@ -13,4 +13,10 @@ interface ConferenceRepository {
     suspend fun getSponsors(): List<Sponsor>
 
     suspend fun getStaff(): List<User>
+
+    suspend fun getContributors(
+        owner: String,
+        name: String,
+        pageNo: Int
+    ): List<User>
 }
