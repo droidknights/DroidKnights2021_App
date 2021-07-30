@@ -49,7 +49,7 @@ dependencies {
     implementation Dep.AndroidX.appcompat
     implementation Dep.AndroidX.fragment
     implementation Dep.AndroidX.material
-    implementation Dep.AndroidX.viewModel
+    implementation Dep.AndroidX.Lifecycle.viewModel
     implementation Dep.AndroidX.recyclerview
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 

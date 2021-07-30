@@ -23,9 +23,12 @@ object Dep {
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
         const val recyclerview = "androidx.recyclerview:recyclerview:1.2.1"
 
-        private const val lifecycleVersion = "2.3.1"
-        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-        const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+        object Lifecycle {
+            private const val lifecycleVersion = "2.3.1"
+            const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+            const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
+            const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+        }
 
         object Navigation {
             private const val version = "2.4.0-alpha05"

@@ -54,7 +54,7 @@ dependencies {
 
     implementation Dep.AndroidX.activity
     implementation Dep.AndroidX.core
-    implementation Dep.AndroidX.viewModel
+    implementation Dep.AndroidX.Lifecycle.viewModel
 
     implementation Dep.Compose.ui
     implementation Dep.Compose.material
