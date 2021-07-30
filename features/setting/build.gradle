@@ -47,8 +47,8 @@ android {
 
 dependencies {
     implementation project(path: ':domain')
-    implementation project(path: ':features:ui-core')
-    implementation project(path: ':features:ui-core-compose')
+    implementation project(path: ':features:core-ui')
+    implementation project(path: ':features:core-ui-compose')
     implementation project(path: ':shared')
 
     implementation Dep.AndroidX.Lifecycle.livedata

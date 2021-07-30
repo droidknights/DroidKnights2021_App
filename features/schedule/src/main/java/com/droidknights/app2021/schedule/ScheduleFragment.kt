@@ -15,11 +15,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.droidknights.app2021.core.ui.compose.layout.FullScreenLoading
+import com.droidknights.app2021.core.ui.compose.layout.LoadingContent
+import com.droidknights.app2021.core.ui.compose.setThemeContent
+import com.droidknights.app2021.core.ui.compose.state.UiState
 import com.droidknights.app2021.navigator.DetailNavigator
-import com.droidknights.app2021.ui.core.compose.layout.FullScreenLoading
-import com.droidknights.app2021.ui.core.compose.layout.LoadingContent
-import com.droidknights.app2021.ui.core.compose.setThemeContent
-import com.droidknights.app2021.ui.core.compose.state.UiState
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import javax.inject.Inject

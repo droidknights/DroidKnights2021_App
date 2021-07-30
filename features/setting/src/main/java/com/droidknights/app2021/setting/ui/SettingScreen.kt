@@ -11,8 +11,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.droidknights.app2021.core.ui.compose.util.toColor
 import com.droidknights.app2021.setting.ScreenAction
-import com.droidknights.app2021.ui.core.compose.util.toColor
 
 @Composable
 internal fun SettingScreen(

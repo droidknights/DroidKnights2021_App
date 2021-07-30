@@ -12,12 +12,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.droidknights.app2021.core.ui.compose.layout.FullScreenLoading
+import com.droidknights.app2021.core.ui.compose.layout.LoadingContent
+import com.droidknights.app2021.core.ui.compose.setThemeContent
+import com.droidknights.app2021.core.ui.compose.state.UiState
 import com.droidknights.app2021.setting.Route
 import com.droidknights.app2021.setting.ScreenAction
-import com.droidknights.app2021.ui.core.compose.layout.FullScreenLoading
-import com.droidknights.app2021.ui.core.compose.layout.LoadingContent
-import com.droidknights.app2021.ui.core.compose.setThemeContent
-import com.droidknights.app2021.ui.core.compose.state.UiState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

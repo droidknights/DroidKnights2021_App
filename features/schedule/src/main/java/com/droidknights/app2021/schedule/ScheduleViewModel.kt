@@ -2,9 +2,9 @@ package com.droidknights.app2021.schedule
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.droidknights.app2021.core.ui.compose.extension.toUiState
+import com.droidknights.app2021.core.ui.compose.state.UiState
 import com.droidknights.app2021.domain.usecase.session.GetSessionsUseCase
-import com.droidknights.app2021.ui.core.compose.extension.toUiState
-import com.droidknights.app2021.ui.core.compose.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

@@ -20,9 +20,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.droidknights.app2021.core.ui.compose.util.toColor
 import com.droidknights.app2021.setting.ui.compose.NetworkImage
 import com.droidknights.app2021.shared.model.User
-import com.droidknights.app2021.ui.core.compose.util.toColor
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

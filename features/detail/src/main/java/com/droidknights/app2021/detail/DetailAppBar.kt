@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
-import com.droidknights.app2021.ui.core.compose.util.toColor
+import com.droidknights.app2021.core.ui.compose.util.toColor
 
 @Composable
 fun DetailAppBar(

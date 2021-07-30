@@ -3,7 +3,7 @@ package com.droidknights.app2021.home.ui
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.droidknights.app2021.ui.core.dp2px
+import com.droidknights.app2021.core.ui.dp2px
 
 class SponsorItemDecoration : RecyclerView.ItemDecoration() {
 

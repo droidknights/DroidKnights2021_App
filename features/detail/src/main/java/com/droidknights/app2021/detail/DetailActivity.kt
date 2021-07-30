@@ -6,13 +6,13 @@ import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
+import com.droidknights.app2021.core.ui.compose.setThemeContent
+import com.droidknights.app2021.core.ui.extraNotNull
+import com.droidknights.app2021.core.ui.startActivity
 import com.droidknights.app2021.detail.util.map
 import com.droidknights.app2021.shared.ext.decodeFromString
 import com.droidknights.app2021.shared.ext.encodeToString
 import com.droidknights.app2021.shared.model.Session
-import com.droidknights.app2021.ui.core.compose.setThemeContent
-import com.droidknights.app2021.ui.core.extraNotNull
-import com.droidknights.app2021.ui.core.startActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
