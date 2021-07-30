@@ -20,7 +20,10 @@ internal fun SettingScreen(
 ) {
     Scaffold(
         topBar = {
-            Column(Modifier.padding(24.dp)) {
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp)) {
                 Text(
                     text = "설정",
                     color = "#2F2E32".toColor(),
