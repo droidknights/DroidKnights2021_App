@@ -108,7 +108,7 @@ private fun SpeakerProfile(
 
 @Preview(widthDp = 200)
 @Composable
-fun SpeakerProfilePreview() {
+private fun SpeakerProfilePreview() {
     Surface(Modifier.padding(10.dp)) {
         SpeakerProfile(
             user = User(

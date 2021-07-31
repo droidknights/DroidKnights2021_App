@@ -108,7 +108,7 @@ private fun StaffProfile(
 
 @Preview(widthDp = 200)
 @Composable
-fun StaffProfilePreview() {
+private fun StaffProfilePreview() {
     Surface(Modifier.padding(10.dp)) {
         StaffProfile(
             user = User(

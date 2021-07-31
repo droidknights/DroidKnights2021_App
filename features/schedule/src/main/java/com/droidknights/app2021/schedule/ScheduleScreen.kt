@@ -20,7 +20,7 @@ import com.google.accompanist.pager.rememberPagerState
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun ScheduleScreen(
+internal fun ScheduleScreen(
     sessions: List<Session>,
     onSessionClick: (Session) -> Unit = {}
 ) {
@@ -68,7 +68,7 @@ fun ScheduleScreen(
 }
 
 @Composable
-fun Schedules(
+private fun Schedules(
     modifier: Modifier = Modifier,
     sessions: List<Session>,
     onSessionClick: (Session) -> Unit = {}

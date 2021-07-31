@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import com.droidknights.app2021.core.ui.compose.util.toColor
 
 @Composable
-fun DetailAppBar(
+internal fun DetailAppBar(
     title: String,
     modifier: Modifier = Modifier,
     onNavigationClick: () -> Unit = {},

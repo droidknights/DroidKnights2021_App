@@ -26,7 +26,7 @@ import com.droidknights.app2021.shared.model.User
 import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
-fun DetailScreen(
+internal fun DetailScreen(
     modifier: Modifier = Modifier,
     session: Session
 ) {
@@ -75,7 +75,7 @@ fun DetailScreen(
 }
 
 @Composable
-fun ProfilesInfo(
+private fun ProfilesInfo(
     modifier: Modifier = Modifier,
     speakers: List<User>
 ) {
@@ -87,7 +87,7 @@ fun ProfilesInfo(
 }
 
 @Composable
-fun ProfileImages(
+private fun ProfileImages(
     speakers: List<User>
 ) {
     ProfileOverLayout {
@@ -114,7 +114,7 @@ fun ProfileImages(
 }
 
 @Composable
-fun ProfileOverLayout(
+private fun ProfileOverLayout(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
