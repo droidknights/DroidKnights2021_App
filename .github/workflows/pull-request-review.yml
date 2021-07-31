@@ -1,0 +1,30 @@
+name: pull request review
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' # if only run pull request when multiple trigger workflow
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - uses: actions/cache@v1
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+            restore-keys: |
+              ${{ runner.os }}-gradle-
+      - uses: eskatos/gradle-command-action@v1
+        with:
+          gradle-version: '7.0.2'
+          arguments: assembleDebug
+          wrapper-cache-enabled: true
