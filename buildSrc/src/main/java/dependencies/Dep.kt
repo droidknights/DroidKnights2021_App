@@ -72,8 +72,10 @@ object Dep {
         const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
-    object coil {
-        const val compose = "io.coil-kt:coil-compose:1.3.1"
+    object Coil {
+        private const val version = "1.3.1"
+        const val core = "io.coil-kt:coil:$version"
+        const val compose = "io.coil-kt:coil-compose:$version"
     }
 
     object Square {
@@ -91,10 +93,4 @@ object Dep {
 
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val inject = "javax.inject:javax.inject:1"
-
-    object Glide {
-        private const val version = "4.12.0"
-        const val glide = "com.github.bumptech.glide:glide:$version"
-        const val compiler = "com.github.bumptech.glide:compiler:$version"
-    }
 }

@@ -61,7 +61,7 @@ dependencies {
     implementation Dep.Compose.themeAdapter
     implementation Dep.Compose.liveData
 
-    implementation Dep.coil.compose
+    implementation Dep.Coil.compose
 
     implementation Dep.Dagger.hiltAndroid
     kapt Dep.Dagger.hiltCompiler

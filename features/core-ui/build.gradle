@@ -44,7 +44,7 @@ dependencies {
     implementation Dep.AndroidX.appcompat
     implementation Dep.AndroidX.material
 
-    implementation Dep.Glide.glide
+    implementation Dep.Coil.core
 
     implementation Dep.timber
 
