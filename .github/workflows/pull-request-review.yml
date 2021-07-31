@@ -3,15 +3,14 @@ name: Pull request build
 on:
   pull_request:
     types: [opened, reopened, edited, synchronize]
+    branches: [ main ]
 
 jobs:
-  pr-build:
+  build:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' # if only run pull request when multiple trigger workflow
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: main
       - uses: actions/setup-java@v1
         with:
           java-version: 11
