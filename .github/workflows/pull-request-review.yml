@@ -21,8 +21,8 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-            restore-keys: |
-              ${{ runner.os }}-gradle-
+          restore-keys: |
+            ${{ runner.os }}-gradle-
       - uses: eskatos/gradle-command-action@v1
         with:
           gradle-version: '7.0.2'
