@@ -7,7 +7,7 @@ package com.droidknights.app2021.shared.result
 sealed class Result<out R> {
 
     data class Success<out T>(val data: T) : Result<T>()
-    data class Error(val exception: Exception) : Result<Nothing>()
+    data class Error(val exception: Throwable) : Result<Nothing>()
     object Loading : Result<Nothing>()
 
     override fun toString(): String {
@@ -31,3 +31,25 @@ fun <T> Result<T>.successOr(fallback: T): T {
 
 val <T> Result<T>.data: T?
     get() = (this as? Result.Success)?.data
+
+inline fun <R, T> Result<T>.map(transform: (T) -> R): Result<R> {
+    return when (this) {
+        is Result.Success -> Result.Success(transform(data))
+        is Result.Error -> Result.Error(exception)
+        Result.Loading -> Result.Loading
+    }
+}
+
+inline fun <R, T> Result<T>.mapCatching(transform: (T) -> R): Result<R> {
+    return when (this) {
+        is Result.Success -> {
+            try {
+                Result.Success(transform(data))
+            } catch (e: Throwable) {
+                Result.Error(e)
+            }
+        }
+        is Result.Error -> Result.Error(exception)
+        Result.Loading -> Result.Loading
+    }
+}
