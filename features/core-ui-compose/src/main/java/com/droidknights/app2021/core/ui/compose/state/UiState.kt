@@ -11,6 +11,7 @@ data class UiState<T>(
     val initialLoad: Boolean
         get() = data == null && loading && !hasError
 
+    @Suppress("UNCHECKED_CAST")
     fun <T> getOrThrow(): T {
         throwOnFailure()
         return data as T
