@@ -65,7 +65,7 @@ private fun DetailContainer(
             DetailAppBar(
                 title = "세션 소개",
                 onNavigationClick = { onBackAction() },
-                onSharedClick = { /** TBD */ }
+                onSharedClick = { /** TODO: 공유하기 */ }
             )
         },
         bottomBar = {
