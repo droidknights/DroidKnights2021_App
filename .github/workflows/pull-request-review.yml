@@ -1,11 +1,11 @@
-name: pull request review
+name: Pull request build
 
 on:
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
 jobs:
-  danger:
+  pr-build:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' # if only run pull request when multiple trigger workflow
     steps:
