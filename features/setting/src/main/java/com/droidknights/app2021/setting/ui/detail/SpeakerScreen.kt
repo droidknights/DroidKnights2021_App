@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
@@ -25,17 +25,17 @@ import com.droidknights.app2021.shared.model.User
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-internal fun StaffScreen(
+internal fun SpeakerScreen(
     modifier: Modifier = Modifier,
-    staffs: List<User>
+    speakers: List<User>
 ) {
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
         modifier = modifier,
         contentPadding = PaddingValues(10.dp)
     ) {
-        items(staffs) { user ->
-            StaffProfile(
+        items(speakers) { user ->
+            SpeakerProfile(
                 modifier = Modifier.padding(10.dp),
                 user = user
             )
@@ -44,7 +44,7 @@ internal fun StaffScreen(
 }
 
 @Composable
-private fun StaffProfile(
+private fun SpeakerProfile(
     modifier: Modifier = Modifier,
     user: User
 ) {
@@ -63,7 +63,7 @@ private fun StaffProfile(
                 modifier = Modifier
                     .weight(1f)
                     .aspectRatio(1f)
-                    .clip(CircleShape),
+                    .clip(CircleShape)
             )
             Column(
                 modifier = Modifier.padding(8.dp),
@@ -92,9 +92,9 @@ private fun StaffProfile(
 
 @Preview(widthDp = 200)
 @Composable
-private fun StaffProfilePreview() {
+private fun SpeakerProfilePreview() {
     Surface(Modifier.padding(10.dp)) {
-        StaffProfile(
+        SpeakerProfile(
             user = User(
                 name = "사용자 이름",
                 photoUrl = "",

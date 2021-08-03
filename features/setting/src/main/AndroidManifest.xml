@@ -3,6 +3,6 @@
     package="com.droidknights.app2021.setting">
 
     <application>
-        <activity android:name=".ui.SettingNavigationActivity" />
+        <activity android:name=".ui.detail.SettingDetailActivity" />
     </application>
 </manifest>

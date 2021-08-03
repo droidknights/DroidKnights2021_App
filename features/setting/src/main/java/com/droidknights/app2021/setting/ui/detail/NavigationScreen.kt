@@ -1,12 +1,9 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Warning
@@ -15,11 +12,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.droidknights.app2021.core.ui.compose.layout.FullScreenLoading
 import com.droidknights.app2021.core.ui.compose.layout.LoadingContent
 import com.droidknights.app2021.core.ui.compose.state.UiState
+import com.droidknights.app2021.core.ui.compose.util.toColor
 import com.droidknights.app2021.setting.Route
 
 @Composable
@@ -81,8 +82,15 @@ private fun NavigationScreen(
     CommonContainer(uiState) {
         Scaffold(
             topBar = {
-                SettingAppBar(
-                    title = title,
+                TopAppBar(
+                    title = {
+                        Text(
+                            text = title,
+                            color = "#2F2E32".toColor(),
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    },
                     navigationIcon = {
                         IconButton(onBackAction) {
                             Icon(
@@ -90,7 +98,9 @@ private fun NavigationScreen(
                                 contentDescription = null
                             )
                         }
-                    }
+                    },
+                    backgroundColor = Color.White,
+                    modifier = Modifier.fillMaxWidth()
                 )
             }
         ) { innerPadding ->

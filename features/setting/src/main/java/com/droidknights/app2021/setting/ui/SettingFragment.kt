@@ -10,6 +10,8 @@ import com.droidknights.app2021.core.ui.compose.setThemeContent
 import com.droidknights.app2021.core.ui.startActivity
 import com.droidknights.app2021.setting.Route
 import com.droidknights.app2021.setting.ScreenAction
+import com.droidknights.app2021.setting.ui.detail.SettingDetailActivity
+import com.droidknights.app2021.setting.ui.detail.SettingScreen
 
 class SettingFragment : Fragment() {
     override fun onCreateView(
@@ -26,7 +28,7 @@ class SettingFragment : Fragment() {
                     ScreenAction.Staff -> Route.Staff
                 }
 
-                context.startActivity<SettingNavigationActivity>(
+                context.startActivity<SettingDetailActivity>(
                     "type" to route
                 )
             }

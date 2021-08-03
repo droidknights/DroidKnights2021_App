@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
@@ -25,80 +25,81 @@ import com.droidknights.app2021.shared.model.User
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-internal fun ContributorScreen(
+internal fun StaffScreen(
     modifier: Modifier = Modifier,
-    contributors: List<User>
+    staffs: List<User>
 ) {
     LazyVerticalGrid(
-        cells = GridCells.Fixed(3),
+        cells = GridCells.Fixed(2),
         modifier = modifier,
         contentPadding = PaddingValues(10.dp)
     ) {
-        items(contributors) { contributor ->
-            ContributorProfile(
-                modifier = Modifier.padding(8.dp),
-                contributor = contributor
+        items(staffs) { user ->
+            StaffProfile(
+                modifier = Modifier.padding(10.dp),
+                user = user
             )
         }
     }
 }
 
 @Composable
-private fun ContributorProfile(
+private fun StaffProfile(
     modifier: Modifier = Modifier,
-    contributor: User
+    user: User
 ) {
     Card(
-        modifier = modifier.aspectRatio(1f),
+        modifier = modifier.aspectRatio(0.75f),
         shape = RoundedCornerShape(8.dp),
         elevation = 4.dp
     ) {
         Column(
             modifier = Modifier.padding(12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             NetworkImage(
-                imageUrl = contributor.photoUrl,
+                imageUrl = user.photoUrl,
                 nonSuccessTintColor = "#43B1B3".toColor(),
                 modifier = Modifier
                     .weight(1f)
                     .aspectRatio(1f)
-                    .clip(CircleShape)
+                    .clip(CircleShape),
             )
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = contributor.name,
-                color = "#2F2E32".toColor(),
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
+            Column(
+                modifier = Modifier.padding(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = user.name,
+                    color = "#2F2E32".toColor(),
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = user.companyName.orEmpty(),
+                    color = "#9A9A9A".toColor(),
+                    fontSize = 12.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+            }
         }
     }
 }
 
-@OptIn(ExperimentalStdlibApi::class)
-@Preview(heightDp = 250)
+@Preview(widthDp = 200)
 @Composable
-private fun ContributorsProfilePreview() {
-    val list = buildList {
-        repeat(5) {
-            add(User("Droid Kngiths 2021", ""))
-        }
-    }
-    Surface {
-        ContributorScreen(contributors = list)
-    }
-}
-
-@Preview(widthDp = 150, heightDp = 150)
-@Composable
-private fun ContributorProfilePreview() {
-    Surface {
-        ContributorProfile(
-            contributor = User("Droid Kngiths 2021", "")
+private fun StaffProfilePreview() {
+    Surface(Modifier.padding(10.dp)) {
+        StaffProfile(
+            user = User(
+                name = "사용자 이름",
+                photoUrl = "",
+                companyName = "회사이름"
+            )
         )
     }
 }

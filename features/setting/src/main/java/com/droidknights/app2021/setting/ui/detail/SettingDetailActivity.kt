@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import com.droidknights.app2021.setting.Route
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingNavigationActivity : AppCompatActivity() {
+class SettingDetailActivity : AppCompatActivity() {
 
     private val type by extraNotNull<Route>("type")
 
