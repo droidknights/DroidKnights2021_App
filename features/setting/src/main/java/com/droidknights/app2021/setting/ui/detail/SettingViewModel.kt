@@ -41,7 +41,7 @@ class SettingViewModel @Inject constructor(
             getContributorsUseCase(
                 GetContributorsUseCase.Param(
                     "droidknights",
-                    "DroidKnights2020_App",
+                    "DroidKnights2021_App",
                     1
                 )
             ).toUiState()
