@@ -16,8 +16,11 @@ object Dep {
     object AndroidX {
         const val core = "androidx.core:core-ktx:1.6.0"
         const val appcompat = "androidx.appcompat:appcompat:1.3.0"
-        const val activity = "androidx.activity:activity-ktx:1.3.0"
-        const val activityCompose = "androidx.activity:activity-compose:1.3.0"
+        object Activity {
+            private const val version = "1.3.1"
+            const val activity = "androidx.activity:activity-ktx:$version"
+            const val compose = "androidx.activity:activity-compose:$version"
+        }
         const val fragment = "androidx.fragment:fragment-ktx:1.3.5"
         const val material = "com.google.android.material:material:1.4.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
@@ -38,7 +41,7 @@ object Dep {
     }
 
     object Compose {
-        const val version = "1.0.0"
+        const val version = "1.0.1"
         const val ui = "androidx.compose.ui:ui:$version"
         const val material = "androidx.compose.material:material:$version"
         const val tooling = "androidx.compose.ui:ui-tooling:$version"
@@ -48,12 +51,12 @@ object Dep {
     }
 
     object Kotlin {
-        const val version = "1.5.10"
+        const val version = "1.5.21"
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
         const val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:0.2.1"
-        const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
+        const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
         const val serializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:$version"
     }
 
@@ -65,14 +68,14 @@ object Dep {
     }
 
     object Accompanist {
-        private const val version = "0.15.0"
+        private const val version = "0.16.0"
         const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$version"
         const val pager = "com.google.accompanist:accompanist-pager:$version"
         const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
     object Coil {
-        private const val version = "1.3.1"
+        private const val version = "1.3.2"
         const val core = "io.coil-kt:coil:$version"
         const val compose = "io.coil-kt:coil-compose:$version"
     }
