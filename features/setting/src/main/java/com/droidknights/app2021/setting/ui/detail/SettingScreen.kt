@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*

@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
@@ -7,9 +7,9 @@ import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.Card
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,42 +25,26 @@ import com.droidknights.app2021.shared.model.User
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-internal fun SpeakerScreen(
-    speakers: List<User>,
-    onBackAction: () -> Unit
+internal fun StaffScreen(
+    modifier: Modifier = Modifier,
+    staffs: List<User>
 ) {
-    Scaffold(
-        topBar = {
-            SettingAppBar(
-                title = "Speaker",
-                navigationIcon = {
-                    IconButton(onClick = onBackAction) {
-                        Icon(
-                            imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = null
-                        )
-                    }
-                }
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(2),
+        modifier = modifier,
+        contentPadding = PaddingValues(10.dp)
+    ) {
+        items(staffs) { user ->
+            StaffProfile(
+                modifier = Modifier.padding(10.dp),
+                user = user
             )
-        }
-    ) { innerPadding ->
-        LazyVerticalGrid(
-            cells = GridCells.Fixed(2),
-            modifier = Modifier.padding(innerPadding),
-            contentPadding = PaddingValues(10.dp)
-        ) {
-            items(speakers) { user ->
-                SpeakerProfile(
-                    modifier = Modifier.padding(10.dp),
-                    user = user
-                )
-            }
         }
     }
 }
 
 @Composable
-private fun SpeakerProfile(
+private fun StaffProfile(
     modifier: Modifier = Modifier,
     user: User
 ) {
@@ -79,7 +63,7 @@ private fun SpeakerProfile(
                 modifier = Modifier
                     .weight(1f)
                     .aspectRatio(1f)
-                    .clip(CircleShape)
+                    .clip(CircleShape),
             )
             Column(
                 modifier = Modifier.padding(8.dp),
@@ -108,9 +92,9 @@ private fun SpeakerProfile(
 
 @Preview(widthDp = 200)
 @Composable
-private fun SpeakerProfilePreview() {
+private fun StaffProfilePreview() {
     Surface(Modifier.padding(10.dp)) {
-        SpeakerProfile(
+        StaffProfile(
             user = User(
                 name = "사용자 이름",
                 photoUrl = "",

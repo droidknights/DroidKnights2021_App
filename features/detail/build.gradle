@@ -52,7 +52,7 @@ dependencies {
     implementation project(path: ':navigator')
     implementation project(path: ':shared')
 
-    implementation Dep.AndroidX.activity
+    implementation Dep.AndroidX.Activity.activity
     implementation Dep.AndroidX.core
     implementation Dep.AndroidX.Lifecycle.viewModel
 
@@ -62,7 +62,7 @@ dependencies {
     implementation Dep.Compose.themeAdapter
 
     implementation Dep.Accompanist.flowLayout
-    implementation Dep.coil.compose
+    implementation Dep.Coil.compose
 
     implementation Dep.Dagger.hiltAndroid
     kapt Dep.Dagger.hiltCompiler

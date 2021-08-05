@@ -31,7 +31,7 @@
       "endTime": "2021-09-25T13:55:00.000"
     },
     {
-      "title": "RecyclerView에서 Adapter와 ViewHolder로 부터 해방되자.",
+      "title": "복잡한 RecyclerView, 데이터로 표현하기",
       "content": [
         "제페토의 복잡한 RecyclerView UI를 Data binding 과 Live data, 코틀린을 활용하여 Adapter와 ViewHolder 없이 xml과 데이터 만을 가지고 최소한의 코드로 구현해 낸 경험기. ",
         "(+ ViewPager2, Paging, Glide 등의 Plug in library 로 고도화, Airbnb epoxy 와 비교하기)"
@@ -39,7 +39,7 @@
       "speakers": [
         {
           "name": "김호중",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/김호중.jpg"
         }
       ],
       "level": "기타",
@@ -88,7 +88,7 @@
       "speakers": [
         {
           "name": "송성현",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/송성현.jpg"
         }
       ],
       "level": "심화",
@@ -102,16 +102,12 @@
     {
       "title": "2021 Junior Jetpack",
       "content": [
-        "초~중급자를 위한 안드로이드 온보딩 세션",
-        "1. 비전공자의 안드로이드 커리어 전환기",
-        "2. 생명주기",
-        "3. 비동기 프로그래밍",
-        "4. 아키텍처"
+        "안드로이드를 처음 배울 때의 경험과 현업 에피소드를 통해 주니어가 발전하기 위한 청사진을 간단히 살펴보고 꿀팁을 공유합니다."
       ],
       "speakers": [
         {
           "name": "김민식",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/김민식.jpg"
         }
       ],
       "level": "초급",
@@ -151,7 +147,7 @@
       "speakers": [
         {
           "name": "차영호",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/차영호.jpeg"
         }
       ],
       "level": "심화",
@@ -195,7 +191,7 @@
       "speakers": [
         {
           "name": "안성용",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/안성용.jpg"
         }
       ],
       "level": "중급",
@@ -214,7 +210,7 @@
       "speakers": [
         {
           "name": "강사룡",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/강사룡.PNG"
         }
       ],
       "level": "기타",
@@ -234,7 +230,7 @@
       "speakers": [
         {
           "name": "최대순",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/최대순.png"
         }
       ],
       "level": "기타",
@@ -254,7 +250,7 @@
       "speakers": [
         {
           "name": "권혁신",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/권혁신.jpeg"
         }
       ],
       "level": "기타",
@@ -302,7 +298,7 @@
       "speakers": [
         {
           "name": "정승욱",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/정승욱.jpeg"
         }
       ],
       "level": "심화",

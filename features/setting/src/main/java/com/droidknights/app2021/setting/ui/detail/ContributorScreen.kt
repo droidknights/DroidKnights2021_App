@@ -1,4 +1,4 @@
-package com.droidknights.app2021.setting.ui
+package com.droidknights.app2021.setting.ui.detail
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
@@ -7,9 +7,9 @@ import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.Card
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,35 +26,19 @@ import com.droidknights.app2021.shared.model.User
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 internal fun ContributorScreen(
-    contributors: List<User>,
-    onBackAction: () -> Unit
+    modifier: Modifier = Modifier,
+    contributors: List<User>
 ) {
-    Scaffold(
-        topBar = {
-            SettingAppBar(
-                title = "Contributors",
-                navigationIcon = {
-                    IconButton(onClick = onBackAction) {
-                        Icon(
-                            imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = null
-                        )
-                    }
-                }
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(3),
+        modifier = modifier,
+        contentPadding = PaddingValues(10.dp)
+    ) {
+        items(contributors) { contributor ->
+            ContributorProfile(
+                modifier = Modifier.padding(8.dp),
+                contributor = contributor
             )
-        }
-    ) { innerPadding ->
-        LazyVerticalGrid(
-            cells = GridCells.Fixed(3),
-            modifier = Modifier.padding(innerPadding),
-            contentPadding = PaddingValues(10.dp)
-        ) {
-            items(contributors) { contributor ->
-                ContributorProfile(
-                    modifier = Modifier.padding(8.dp),
-                    contributor = contributor
-                )
-            }
         }
     }
 }
@@ -105,7 +89,7 @@ private fun ContributorsProfilePreview() {
         }
     }
     Surface {
-        ContributorScreen(list) {}
+        ContributorScreen(contributors = list)
     }
 }
 
