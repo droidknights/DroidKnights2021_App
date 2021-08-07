@@ -49,7 +49,7 @@
                 android:layout_height="36dp"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.DifferentCornerSize.8dp"
+                app:shapeAppearanceOverlay="@style/RoundedHeaderLogo"
                 app:srcCompat="@drawable/ic_android_white" />
 
             <TextView
