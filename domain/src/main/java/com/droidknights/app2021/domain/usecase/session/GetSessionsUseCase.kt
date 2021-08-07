@@ -25,6 +25,7 @@ class GetSessionsUseCase @Inject constructor(
                     endTime = it.endTime
                 )
             }
-        // TODO: 시간, 세션명 순으로 정렬
+            .sortedWith(compareBy({ it.startTime }, { it.title }))
+            .sortedBy { it.room }
     }
 }
