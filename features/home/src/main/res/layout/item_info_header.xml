@@ -43,14 +43,14 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="16dp" />
 
-            <!-- TODO : Radius 8dp로 ImageView 노출 -->
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/logo"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_android_white"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedHeaderLogo"
+                app:srcCompat="@drawable/ic_android_white" />
 
             <TextView
                 android:id="@+id/tvDroidKnights"
