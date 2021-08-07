@@ -27,9 +27,18 @@
 #### Libraries
 
 - AndroidX
+  - Activity & Activity Compose
+  - AppCompat
+  - Core
+  - ConstraintLayout
+  - Fragment
+  - Lifecycle & ViewModel Compose
+  - Navigation
+  - RecyclerView
+- Google Android Material
+- Kotlin Libraries (Coroutine, DateTime, Serialization)
 - Compose (1.0.0 or higher)
 - Coil & Coil-compose
-- Kotlin Libraries (Coroutine, DateTime, Serialization)
 - Dagger & Hilt
 - Accompanist (FlowLayout, Pager)
 - Square (Retrofit, OkHttp)
@@ -37,7 +46,17 @@
 
 ### Architecture
 
-TBD
+#### Layer
+
+본 프로젝트는 Layered Architecture 형태로 설계되어 있습니다. 현재 Presentation/Domain/Data 레이어 구조를 띄고 있습니다.
+
+<img src="arts/architecture-layer.png" width="480" />
+
+#### Module
+
+본 프로젝트는 Multi-module 구조이며 각 Feature마다 모듈 형태로 구성되어 있습니다.
+
+<img src="arts/architecture-module.png" />
 
 ## Thanks
 
