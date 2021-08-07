@@ -242,7 +242,7 @@
       "endTime": "2021-09-25T17:15:00.000"
     },
     {
-      "title": "Android Asynchronous Programming",
+      "title": "Asynchronous Programming for Android",
       "content": [
         "안드로이드의 비동기 프로그래밍의 기술은 대표적으로 CallBack, RxJava, Coroutine 이 있습니다.",
         "Retrofit을 활용하여 가장 기본적인 네트워크 통신을 해야할 경우에 3가지 기술 각각의 베이스 소스 코드를 모두 살펴보고, 차이점과 장단점에 대해서 살펴볼 것 입니다."
