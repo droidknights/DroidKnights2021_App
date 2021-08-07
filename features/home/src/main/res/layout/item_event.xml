@@ -59,7 +59,6 @@
             android:textColor="#9A9A9A"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:bindEndEvent="@{item.endEvent}"
             app:bindEventDate="@{item.date}"
             app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toBottomOf="parent"
