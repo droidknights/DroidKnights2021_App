@@ -1,5 +1,13 @@
 package com.droidknights.app2021.home.ui.adapter
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import com.droidknights.app2021.home.BR
 import com.droidknights.app2021.home.R
 import com.droidknights.app2021.home.util.DataBindingViewHolder
@@ -30,5 +38,26 @@ class SponsorAdapter(
 
     interface ItemHandler {
         fun clickSponsor(sponsor: Sponsor)
+    }
+}
+
+@Composable
+fun SponsorItem(
+    sponsor: Sponsor,
+    itemHandler: SponsorAdapter.ItemHandler
+) {
+    Row(
+        modifier = Modifier.height(22.dp)
+            .wrapContentWidth()
+    ) {
+        Image(
+            painter = rememberImagePainter(
+                data = sponsor.photoUrl,
+                builder = {
+                    crossfade(true)
+                }
+            ),
+            contentDescription = null
+        )
     }
 }
