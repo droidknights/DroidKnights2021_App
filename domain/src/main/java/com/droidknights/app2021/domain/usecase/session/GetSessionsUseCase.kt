@@ -26,6 +26,5 @@ class GetSessionsUseCase @Inject constructor(
                 )
             }
             .sortedWith(compareBy({ it.startTime }, { it.title }))
-            .sortedBy { it.room }
     }
 }
