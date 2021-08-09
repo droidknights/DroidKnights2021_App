@@ -64,3 +64,17 @@
 
 - GitHub : [Contributors](https://github.com/droidknights/DroidKnights2021_App/graphs/contributors)
 - Designer : Nayeon Kim
+
+## Trouble Shooting
+
+#### Android Studio Arctic fox에서 JDK 11이 필요함
+
+Arctic fox부터 사용되는 AGP 7.0은 JDK 11이 필요합니다. 현재 JDK가 Java 11을 사용 중인지 확인해주세요.
+
+- 참고 자료 : https://developer.android.com/studio/releases/gradle-plugin#jdk-11
+
+#### Android Studio Arctic fox에서 영어 이외의 언어가 깨져서 노출됨
+
+Android Studio IDE의 일부 메뉴(Git 탭, Preference 등)에서는 영어 이외의 언어가 폰트가 깨진 상태로 렌더링되는 현상이 있습니다. (tofu-ing)
+
+- 해결법 : Preferences | Appearance & Behavior | Appearance에서 `Use custom font`를 체크한 후 별도 폰트를 선택
