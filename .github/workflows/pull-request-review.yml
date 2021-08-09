@@ -25,5 +25,5 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
           gradle-version: '7.0.2'
-          arguments: assembleDebug
+          arguments: assembleDebug testDebugUnitTest
           wrapper-cache-enabled: true
