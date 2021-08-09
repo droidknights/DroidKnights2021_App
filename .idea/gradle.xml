@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/features/setting" />
             <option value="$PROJECT_DIR$/navigator" />
             <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/test-shared" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
