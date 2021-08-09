@@ -19,7 +19,7 @@ private const val SCROLL_DX = 5
 fun RecyclerView.bindSponsors(
     items: List<Sponsor>?,
     itemHandler: SponsorAdapter.ItemHandler,
-    coroutineScope: CoroutineScope
+    coroutineScope: CoroutineScope?
 ) {
     clearItemDecoration()
     if (items?.isNotEmpty() == true) {
@@ -27,7 +27,7 @@ fun RecyclerView.bindSponsors(
         addItemDecoration(SponsorItemDecoration())
     }
 
-    coroutineScope.launch {
+    coroutineScope?.launch {
         launchAutoScroll()
     }
 }
