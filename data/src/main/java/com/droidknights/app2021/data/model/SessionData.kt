@@ -19,8 +19,6 @@ data class SessionData(
     val speakers: List<User>,
     val level: Level,
     val tags: List<Tag> = emptyList(),
-    // TODO: Track1, track1은 Room.Track1으로 매칭되어야한다.
-    // TODO: 트랙정보가 올바르게 매칭되지 않을시 Room.Etc로 매칭되어야한다
     val room: Room = Room.Etc,
     val startTime: LocalDateTime,
     val endTime: LocalDateTime,
