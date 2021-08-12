@@ -28,7 +28,6 @@ internal fun ScheduleScreen(
         it.room
     }
 
-    // TODO: Room1, Room2, Etc 순서로 노출
     val rooms = groupingSession.keys.toList()
     val pagerState = rememberPagerState(pageCount = rooms.size)
 

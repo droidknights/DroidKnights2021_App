@@ -25,6 +25,6 @@ class GetSessionsUseCase @Inject constructor(
                     endTime = it.endTime
                 )
             }
-            .sortedWith(compareBy({ it.startTime }, { it.title }))
+            .sortedWith(compareBy({ it.room.ordinal }, { it.startTime }, { it.title }))
     }
 }
