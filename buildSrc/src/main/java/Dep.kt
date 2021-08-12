@@ -53,9 +53,9 @@ object Dep {
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
 
         object Test {
-            const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Dep.Kotlin.coroutineVersion}"
-            const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Dep.Kotlin.coroutineVersion}"
-            const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Dep.Kotlin.coroutineVersion}"
+            const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion"
+            const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+            const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
         }
     }
 
