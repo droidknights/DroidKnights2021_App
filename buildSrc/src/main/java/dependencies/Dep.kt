@@ -52,12 +52,19 @@ object Dep {
 
     object Kotlin {
         const val version = "1.5.21"
+        const val coroutineVersion = "1.5.1"
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
-        const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+        const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
         const val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:0.2.1"
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
         const val serializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:$version"
+
+        object Test {
+            const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion"
+            const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+            const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+        }
     }
 
     object Dagger {
@@ -91,6 +98,7 @@ object Dep {
         const val junit = "junit:junit:4.13.2"
         const val junitExt = "androidx.test.ext:junit:1.1.3"
         const val espresso = "androidx.test.espresso:espresso-core:3.4.0"
+        const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:3.2.0"
     }
 
     const val timber = "com.jakewharton.timber:timber:4.7.1"
