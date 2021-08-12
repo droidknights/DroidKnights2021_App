@@ -1,63 +1,58 @@
-import dependencies.Dep
-import dependencies.Versions
-
 plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
+    `android-library`
+    kotlin("android")
 }
 
 android {
-    compileSdk Versions.compileSdk
-    buildToolsVersion Versions.buildTools
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
 
     defaultConfig {
-        minSdk Versions.minSdk
-        targetSdk Versions.targetSdk
-        versionCode 1
-        versionName "1.0"
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile(
+                    "proguard-android-optimize.txt"
+                ),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-        useIR = true
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        compose true
+        compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion Dep.Compose.version
-        kotlinCompilerVersion Dep.Kotlin.version
+        kotlinCompilerExtensionVersion = Dep.Compose.version
     }
 }
 
 dependencies {
-    implementation project(path: ':shared')
+    implementation(project(":shared"))
 
-    implementation Dep.AndroidX.core
-    implementation Dep.AndroidX.Activity.compose
-    implementation Dep.AndroidX.fragment
+    implementation(Dep.AndroidX.core)
+    implementation(Dep.AndroidX.Activity.compose)
+    implementation(Dep.AndroidX.fragment)
 
-    implementation Dep.Compose.ui
-    implementation Dep.Compose.material
-    implementation Dep.Compose.tooling
-    implementation Dep.Compose.themeAdapter
+    implementation(Dep.Compose.ui)
+    implementation(Dep.Compose.material)
+    implementation(Dep.Compose.tooling)
+    implementation(Dep.Compose.themeAdapter)
 
-    implementation Dep.timber
+    implementation(Dep.timber)
 
-    testImplementation Dep.Test.junit
-    androidTestImplementation Dep.Test.junitExt
-    androidTestImplementation Dep.Test.espresso
+    testImplementation(Dep.Test.junit)
+    androidTestImplementation(Dep.Test.junitExt)
+    androidTestImplementation(Dep.Test.espresso)
 }
