@@ -1,8 +1,5 @@
-import dependencies.Dep
-
 plugins {
-    id 'java-library'
-    id 'kotlin'
+    kotlin
 }
 
 java {
@@ -11,7 +8,7 @@ java {
 }
 
 dependencies {
-    implementation Dep.Test.junit
-    api Dep.Kotlin.Test.coroutineTest
-    api Dep.Test.mockitoKotlin
+    implementation(Dep.Test.junit)
+    api(Dep.Kotlin.Test.coroutineTest)
+    api(Dep.Test.mockitoKotlin)
 }
