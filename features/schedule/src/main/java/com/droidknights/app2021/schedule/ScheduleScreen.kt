@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.droidknights.app2021.core.ui.compose.util.toColor
+import com.droidknights.app2021.shared.Room
 import com.droidknights.app2021.shared.model.Session
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -28,7 +29,11 @@ internal fun ScheduleScreen(
         it.room
     }
 
-    val rooms = groupingSession.keys.toList()
+    val rooms = listOf<Room>(
+        enumValueOf(name = Room.Track1.name),
+        enumValueOf(name = Room.Track2.name),
+        enumValueOf(name = Room.Etc.name)
+    )
     val pagerState = rememberPagerState(pageCount = rooms.size)
 
     Column(Modifier.fillMaxSize()) {
