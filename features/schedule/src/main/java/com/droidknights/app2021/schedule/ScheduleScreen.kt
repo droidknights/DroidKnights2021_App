@@ -87,8 +87,8 @@ private fun Schedules(
     }
 }
 
-private fun sortedRoomList() = listOf<Room>(
-    enumValueOf(name = Room.Track1.name),
-    enumValueOf(name = Room.Track2.name),
-    enumValueOf(name = Room.Etc.name)
+private fun sortedRoomList() = listOf(
+    Room.Track1,
+    Room.Track2,
+    Room.Etc
 )
