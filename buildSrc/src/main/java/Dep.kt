@@ -1,5 +1,3 @@
-package dependencies
-
 object Versions {
     const val compileSdk = 30
     const val buildTools = "30.0.3"
