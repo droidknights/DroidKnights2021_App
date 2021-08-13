@@ -29,7 +29,7 @@ internal fun ScheduleScreen(
         it.room
     }
 
-    val rooms = sortedRoomList()
+    val rooms = sortedRoomList(groupingSession = groupingSession)
     val pagerState = rememberPagerState(pageCount = rooms.size)
 
     Column(Modifier.fillMaxSize()) {
@@ -87,8 +87,16 @@ private fun Schedules(
     }
 }
 
-private fun sortedRoomList() = listOf(
-    Room.Track1,
-    Room.Track2,
-    Room.Etc
-)
+private fun sortedRoomList(groupingSession: Map<Room, List<Session>>): List<Room> {
+    val sortedRoomList = mutableListOf<Room>()
+    if (groupingSession.containsKey(Room.Track1)) {
+        sortedRoomList.add(Room.Track1)
+    }
+    if (groupingSession.containsKey(Room.Track2)) {
+        sortedRoomList.add(Room.Track2)
+    }
+    if (groupingSession.containsKey(Room.Etc)) {
+        sortedRoomList.add(Room.Etc)
+    }
+    return sortedRoomList.toList()
+}
