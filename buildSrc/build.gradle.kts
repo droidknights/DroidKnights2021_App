@@ -25,14 +25,14 @@ repositories {
 }
 
 object PluginVersion {
-    const val ANDROID_TOOL = "7.0.0"
-    const val KOTLIN = "1.5.21"
-    const val DAGGER = "2.38.1"
+    const val androidTool = "7.0.0"
+    const val kotlin = "1.5.21"
+    const val dagger = "2.38.1"
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:${PluginVersion.ANDROID_TOOL}")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${PluginVersion.KOTLIN}")
-    implementation("org.jetbrains.kotlin:kotlin-serialization:${PluginVersion.KOTLIN}")
-    implementation("com.google.dagger:hilt-android-gradle-plugin:${PluginVersion.DAGGER}")
+    implementation("com.android.tools.build:gradle:${PluginVersion.androidTool}")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${PluginVersion.kotlin}")
+    implementation("org.jetbrains.kotlin:kotlin-serialization:${PluginVersion.kotlin}")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:${PluginVersion.dagger}")
 }
