@@ -1,9 +1,9 @@
 plugins {
-    com.android.library
+    id("com.android.library")
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    `kotlinx-serialization`
+    id("kotlinx-serialization")
 }
 
 android {

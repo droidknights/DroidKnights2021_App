@@ -9,6 +9,8 @@ object Versions {
 }
 
 object Dep {
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0"
+
     object AndroidX {
         const val core = "androidx.core:core-ktx:1.6.0"
         const val appcompat = "androidx.appcompat:appcompat:1.3.0"
@@ -47,10 +49,14 @@ object Dep {
     }
 
     object Kotlin {
+        const val version = "1.5.21"
         const val coroutineVersion = "1.5.1"
+
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
         const val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:0.2.1"
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
+        const val serializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:$version"
 
         object Test {
             const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion"
@@ -63,6 +69,7 @@ object Dep {
         private const val daggerVersion = "2.38.1"
         const val hiltAndroid = "com.google.dagger:hilt-android:$daggerVersion"
         const val hiltCompiler = "com.google.dagger:hilt-compiler:$daggerVersion"
+        const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$daggerVersion"
     }
 
     object Accompanist {
