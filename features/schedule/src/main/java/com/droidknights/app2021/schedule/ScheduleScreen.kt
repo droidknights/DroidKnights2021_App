@@ -29,11 +29,7 @@ internal fun ScheduleScreen(
         it.room
     }
 
-    val rooms = listOf<Room>(
-        enumValueOf(name = Room.Track1.name),
-        enumValueOf(name = Room.Track2.name),
-        enumValueOf(name = Room.Etc.name)
-    )
+    val rooms = sortedRoomList()
     val pagerState = rememberPagerState(pageCount = rooms.size)
 
     Column(Modifier.fillMaxSize()) {
@@ -90,3 +86,10 @@ private fun Schedules(
         }
     }
 }
+
+@Composable
+private fun sortedRoomList() = listOf<Room>(
+    enumValueOf(name = Room.Track1.name),
+    enumValueOf(name = Room.Track2.name),
+    enumValueOf(name = Room.Etc.name)
+)
