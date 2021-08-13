@@ -14,10 +14,7 @@ class RoomAsStringSerializer: KSerializer<Room> {
     }
 
     override fun deserialize(decoder: Decoder): Room {
-        return try {
-            Room.valueOf(decoder.decodeString().replaceFirstChar { it.uppercaseChar() })
-        } catch (e: IllegalArgumentException) {
-            Room.Etc
-        }
+        val decodedString = decoder.decodeString()
+        return Room.values().find { it.name.lowercase() == decodedString.lowercase() } ?: Room.Etc
     }
 }
