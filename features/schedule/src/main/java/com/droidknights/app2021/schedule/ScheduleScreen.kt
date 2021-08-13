@@ -87,7 +87,6 @@ private fun Schedules(
     }
 }
 
-@Composable
 private fun sortedRoomList() = listOf<Room>(
     enumValueOf(name = Room.Track1.name),
     enumValueOf(name = Room.Track2.name),
