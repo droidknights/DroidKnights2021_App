@@ -15,3 +15,9 @@ buildscript {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+
+subprojects {
+    afterEvaluate {
+        project.apply("$rootDir/gradle/common.gradle")
+    }
+}
