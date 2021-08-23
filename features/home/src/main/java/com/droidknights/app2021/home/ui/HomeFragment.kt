@@ -1,16 +1,13 @@
 package com.droidknights.app2021.home.ui
 
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.droidknights.app2021.core.ui.ActivityHelper
 import com.droidknights.app2021.home.R
 import com.droidknights.app2021.home.databinding.FragmentHomeBinding
