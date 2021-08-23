@@ -23,6 +23,7 @@ dependencies {
     implementation(Dep.AndroidX.Lifecycle.viewModel)
     implementation(Dep.AndroidX.recyclerview)
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation(Dep.AndroidX.browser)
 
     implementation(Dep.Kotlin.dateTime)
 
