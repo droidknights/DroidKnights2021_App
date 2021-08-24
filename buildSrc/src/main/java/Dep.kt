@@ -23,6 +23,7 @@ object Dep {
         const val material = "com.google.android.material:material:1.4.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
         const val recyclerview = "androidx.recyclerview:recyclerview:1.2.1"
+        const val browser = "androidx.browser:browser:1.3.0"
 
         object Lifecycle {
             private const val lifecycleVersion = "2.3.1"

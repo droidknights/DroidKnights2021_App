@@ -1,22 +1,19 @@
 package com.droidknights.app2021.home.ui
 
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.DividerItemDecoration
-import com.droidknights.app2021.core.ui.ActivityHelper
 import com.droidknights.app2021.home.R
 import com.droidknights.app2021.home.databinding.FragmentHomeBinding
 import com.droidknights.app2021.home.ui.adapter.EventAdapter
 import com.droidknights.app2021.home.ui.adapter.HeaderAdapter
 import com.droidknights.app2021.home.ui.adapter.InfoAdapter
+import com.droidknights.app2021.home.util.startOpenUrl
 import com.droidknights.app2021.shared.model.Event
 import com.droidknights.app2021.shared.model.Sponsor
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,14 +41,12 @@ class HomeFragment : Fragment() {
                 HeaderAdapter(),
                 InfoAdapter(it.sponsors, object : InfoAdapter.ItemHandler {
                     override fun clickSponsor(sponsor: Sponsor) {
-                        // TODO: androidx.browser:browser를 활용해 앱내에서 웹뷰 열기
-                        ActivityHelper.startActionView(requireContext(), sponsor.homepage)
+                        requireContext().startOpenUrl(sponsor.homepage)
                     }
                 }),
                 EventAdapter(it.events, object : EventAdapter.ItemHandler {
                     override fun clickEvent(event: Event) {
-                        // TODO: androidx.browser:browser를 활용해 앱내에서 웹뷰 열기
-                        ActivityHelper.startActionView(requireContext(), event.url)
+                        requireContext().startOpenUrl(event.url)
                     }
                 })
             )
