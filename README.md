@@ -56,6 +56,12 @@
 
 본 프로젝트는 Multi-module 구조이며 각 Feature마다 모듈 형태로 구성되어 있습니다.
 
+**DI Graph**
+
+<img src="arts/architecture-module-graph.png" />
+
+**DI Graph (Layer)**
+
 <img src="arts/architecture-module.png" />
 
 ## Thanks
