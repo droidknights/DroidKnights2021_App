@@ -21,3 +21,7 @@ subprojects {
         project.apply("$rootDir/gradle/common.gradle")
     }
 }
+
+apply {
+    from("gradle/dependencyGraph.gradle")
+}
