@@ -13,12 +13,17 @@
       "endTime": "2021-09-25T13:20:00.000"
     },
     {
-      "title": "Jetpack Windows Manager 라이브러리와 함께 하는 폴더플 디바이스 지원",
-      "content": [],
+      "title": "Jetpack Windows Manager 라이브러리와 함께 하는 폴더블 디바이스 지원",
+      "content": [
+        "얼리어답터를 위한 장난감에서 어느새 대세로 떠오르는 폴더블 디바이스.",
+        "여러분의 앱은 폴더블 디바이스에서 잘 동작하고 있나요?",
+        "앱 사용자들은 폴더블 및 라지 스크린 디바이스 위에서 어떤 새로운 기능을 기대하고 있을까요?",
+        "마침내 베타 버전이 출시된 Jetpack Windows Manager 라이브러리 및 플랫폼 기능들을 활용해 폴더블 디바이스 호환 앱을 만들 때 주의할 점과 최적의 사용자 경험을 제공하는 방법과 살펴봅니다."
+      ],
       "speakers": [
         {
           "name": "양찬석",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/양찬석.png"
         }
       ],
       "level": "기타",
@@ -127,7 +132,7 @@
       "speakers": [
         {
           "name": "유영혁",
-          "photoUrl": ""
+          "photoUrl": "https://raw.githubusercontent.com/droidknights/DroidKnights2021_App/main/storage/speaker/유영혁.jpg"
         }
       ],
       "level": "중급",
@@ -284,7 +289,7 @@
       "endTime": "2021-09-25T14:30:00.000"
     },
     {
-      "title": "Activity 코드 라인 0 만들기",
+      "title": "액티비티:코드제로",
       "content": [
         "1. MVVM Recap",
         "2. Jetpack Architecture Component 의 한계",
