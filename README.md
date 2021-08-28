@@ -20,7 +20,7 @@
   - Java 11을 사용하는 JDK (Open JDK, AdoptOpenJDK, GraalVM)
 - Kotlin Language : 1.5.10
 
-#### Laguage
+#### Language
 
 - Kotlin
 
