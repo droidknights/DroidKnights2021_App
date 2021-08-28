@@ -5,17 +5,12 @@
 
     <data>
 
-        <variable
-            name="itemHandler"
-            type="com.droidknights.app2021.home.ui.adapter.SponsorAdapter.ItemHandler" />
 
         <variable
             name="item"
             type="com.droidknights.app2021.home.ui.adapter.InfoItem" />
 
-        <variable
-            name="coroutineScope"
-            type="kotlinx.coroutines.CoroutineScope" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -99,13 +94,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal"
-                app:itemHandler="@{itemHandler}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvContent"
-                app:coroutineScope="@{coroutineScope}"
-                app:sponsors="@{item.sponsors}"
                 tools:itemCount="4"
                 tools:listitem="@layout/item_info_sponsor" />
 
