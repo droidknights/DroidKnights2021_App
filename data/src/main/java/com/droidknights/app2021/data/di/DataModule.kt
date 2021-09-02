@@ -19,7 +19,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module(includes = [DataModule.ApiModule::class])
-abstract class DataModule {
+internal abstract class DataModule {
     @Binds
     abstract fun bindsConferenceRepository(
         repository: ConferenceRepositoryImpl

@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 
 @InstallIn(SingletonComponent::class)
 @Module
-abstract class AssetModule {
+internal abstract class AssetModule {
     @Binds
     abstract fun bindsAssetProvider(
         assetLoader: CacheAssetLoader
