@@ -36,7 +36,7 @@
       "endTime": "2021-09-25T13:55:00.000"
     },
     {
-      "title": "복잡한 RecyclerView, 데이터로 표현하기",
+      "title": "복잡한 RecyclerView, 군더더기 없이 데이터로 표현하기",
       "content": [
         "제페토의 복잡한 RecyclerView UI를 Data binding 과 Live data, 코틀린을 활용하여 Adapter와 ViewHolder 없이 xml과 데이터 만을 가지고 최소한의 코드로 구현해 낸 경험기. ",
         "(+ ViewPager2, Paging, Glide 등의 Plug in library 로 고도화, Airbnb epoxy 와 비교하기)"
