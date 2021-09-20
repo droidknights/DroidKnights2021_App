@@ -1,14 +1,17 @@
 package com.droidknights.app2021.home.ui
 
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.droidknights.app2021.core.ui.ActivityHelper
 import com.droidknights.app2021.home.R
 import com.droidknights.app2021.home.databinding.FragmentHomeBinding
@@ -39,6 +42,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.homeInfo.observe(viewLifecycleOwner) {
             val concatAdapter = ConcatAdapter(
+                ConcatAdapter.Config.Builder().setIsolateViewTypes(false).build(),
                 HeaderAdapter(),
                 InfoAdapter(lifecycleScope, it.sponsors, object : InfoAdapter.ItemHandler {
                     override fun clickSponsor(sponsor: Sponsor) {
@@ -54,8 +58,7 @@ class HomeFragment : Fragment() {
                 })
             )
             binding.recyclerView.adapter = concatAdapter
-
-            // TODO: 이벤트 항목간의 Divider 추가
+            binding.recyclerView.addItemDecoration(EventItemDecoration(view.context))
         }
     }
 }
