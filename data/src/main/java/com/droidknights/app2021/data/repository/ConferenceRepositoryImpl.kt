@@ -10,7 +10,7 @@ import com.droidknights.app2021.shared.model.Sponsor
 import com.droidknights.app2021.shared.model.User
 import javax.inject.Inject
 
-class ConferenceRepositoryImpl @Inject constructor(
+internal class ConferenceRepositoryImpl @Inject constructor(
     private val conferenceApi: ConferenceApi,
     private val githubApi: GithubApi,
     private val localCacheProvider: LocalCacheProvider

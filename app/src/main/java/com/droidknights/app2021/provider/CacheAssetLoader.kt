@@ -7,7 +7,7 @@ import com.droidknights.app2021.util.AssetUtil
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class CacheAssetLoader @Inject constructor(
+internal class CacheAssetLoader @Inject constructor(
     @ApplicationContext private val context: Context
 ) : AssetProvider {
     override suspend fun getRawSessions(): JsonRawString {

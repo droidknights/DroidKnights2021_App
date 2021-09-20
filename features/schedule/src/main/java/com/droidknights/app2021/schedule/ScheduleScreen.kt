@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.droidknights.app2021.core.ui.compose.util.toColor
+import com.droidknights.app2021.shared.Room
 import com.droidknights.app2021.shared.model.Session
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -28,8 +29,7 @@ internal fun ScheduleScreen(
         it.room
     }
 
-    // TODO: Room1, Room2, Etc 순서로 노출
-    val rooms = groupingSession.keys.toList()
+    val rooms = sortedRoomList(groupingSession = groupingSession)
     val pagerState = rememberPagerState(pageCount = rooms.size)
 
     Column(Modifier.fillMaxSize()) {
@@ -85,4 +85,18 @@ private fun Schedules(
             )
         }
     }
+}
+
+private fun sortedRoomList(groupingSession: Map<Room, List<Session>>): List<Room> {
+    val sortedRoomList = mutableListOf<Room>()
+    if (groupingSession.containsKey(Room.Track1)) {
+        sortedRoomList.add(Room.Track1)
+    }
+    if (groupingSession.containsKey(Room.Track2)) {
+        sortedRoomList.add(Room.Track2)
+    }
+    if (groupingSession.containsKey(Room.Etc)) {
+        sortedRoomList.add(Room.Etc)
+    }
+    return sortedRoomList.toList()
 }
