@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import com.droidknights.app2021.home.compose.adapters.ComposeListAdapter
@@ -15,7 +14,6 @@ import com.droidknights.app2021.home.compose.adapters.ComposeViewHolder
 import com.droidknights.app2021.home.compose.view.NetworkImage
 import com.droidknights.app2021.home.util.recyclerview.ItemDiffCallback
 import com.droidknights.app2021.shared.model.Sponsor
-import timber.log.Timber
 
 class SponsorAdapter(
     sponsors: List<Sponsor>,
@@ -72,24 +70,4 @@ fun SponsorItem(
                 }
         )
     }
-}
-
-@ExperimentalCoilApi
-@Preview(
-    backgroundColor = 0x000000
-)
-@Composable
-fun PreviewSponsor() {
-    SponsorItem(
-        sponsor = Sponsor(
-            "toss",
-            "https://raw.githubusercontent.com/droidknights/DroidKnights2020_App/master/androidapp/app/src/main/res/drawable-xxxhdpi/ic_sponsor_toss.png",
-            "https://toss.im/"
-        ),
-        itemHandler = object : SponsorAdapter.ItemHandler {
-            override fun clickSponsor(sponsor: Sponsor) {
-
-            }
-        }
-    )
 }
