@@ -24,7 +24,7 @@ class SponsorAdapter(
 )) {
 
     init {
-        submitList(sponsors + sponsors + sponsors)
+        submitList(sponsors + sponsors)
     }
 
     class SponsorViewHolder(

@@ -52,7 +52,7 @@ internal class InfoAdapter(
         }
 
         coroutineScope.launch {
-            (holder.binding as ItemInfoHeaderBinding).sponsorList.launchAutoScroll()
+            holder.binding.sponsorList.launchAutoScroll()
         }
     }
 
@@ -65,12 +65,10 @@ internal class InfoAdapter(
         val firstVisibleItem =
             (layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
         if (firstVisibleItem != RecyclerView.NO_POSITION) {
-            if (firstVisibleItem != 0) {
-                val currentList = (adapter as SponsorAdapter).currentList
-                val secondPart = currentList.subList(0, 1)
-                val firstPart = currentList.subList(1, currentList.size)
-                (adapter as SponsorAdapter).submitList(firstPart + secondPart)
-            }
+            val currentList = (adapter as SponsorAdapter).currentList
+            val secondPart = currentList.subList(0, firstVisibleItem)
+            val firstPart = currentList.subList(firstVisibleItem, currentList.size)
+            (adapter as SponsorAdapter).submitList(firstPart + secondPart)
         }
         delay(25L)
         launchAutoScroll()
