@@ -52,6 +52,22 @@ internal class InfoAdapter(
             holder.binding.sponsorList.launchAutoScroll()
         }
 
+        holder.binding.sponsorList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                when (newState) {
+                    RecyclerView.SCROLL_STATE_IDLE -> {
+                        scrollJob = coroutineScope.launch {
+                            holder.binding.sponsorList.launchAutoScroll()
+                        }
+                    }
+                    RecyclerView.SCROLL_STATE_DRAGGING -> {
+                        scrollJob?.cancel()
+                    }
+                }
+            }
+        })
+
         holder.binding.sponsorList.setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
