@@ -1,8 +1,6 @@
 package com.droidknights.app2021.home.ui.adapter
 
-import android.os.Handler
-import android.os.Looper
-import androidx.compose.runtime.LaunchedEffect
+import android.view.MotionEvent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.droidknights.app2021.home.R
@@ -13,10 +11,9 @@ import com.droidknights.app2021.home.util.recyclerview.ItemDiffCallback
 import com.droidknights.app2021.home.util.recyclerview.ListBindingAdapter
 import com.droidknights.app2021.shared.model.Sponsor
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import timber.log.Timber
 
 private const val SCROLL_DX = 5
 
@@ -51,8 +48,24 @@ internal class InfoAdapter(
             sponsorList.addItemDecoration(SponsorItemDecoration())
         }
 
-        coroutineScope.launch {
+        var scrollJob: Job? = coroutineScope.launch {
             holder.binding.sponsorList.launchAutoScroll()
+        }
+
+        holder.binding.sponsorList.setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    scrollJob?.cancel()
+                    true
+                }
+                MotionEvent.ACTION_UP -> {
+                    scrollJob = coroutineScope.launch {
+                        holder.binding.sponsorList.launchAutoScroll()
+                    }
+                    true
+                }
+                else -> true
+            }
         }
     }
 
