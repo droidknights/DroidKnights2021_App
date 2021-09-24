@@ -2,8 +2,6 @@ package com.droidknights.app2021.home.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.MotionEvent
-import androidx.lifecycle.findViewTreeLifecycleOwner
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.droidknights.app2021.home.R
@@ -14,10 +12,8 @@ import com.droidknights.app2021.home.util.recyclerview.ItemDiffCallback
 import com.droidknights.app2021.home.util.recyclerview.ListBindingAdapter
 import com.droidknights.app2021.shared.model.Sponsor
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.callbackFlow
-import timber.log.Timber
 
-private const val SCROLL_DX = 5000
+private const val SCROLL_DX = 25
 
 internal class InfoAdapter(
     private val coroutineScope: CoroutineScope,
@@ -84,10 +80,14 @@ internal class InfoAdapter(
         if (firstVisibleItem != RecyclerView.NO_POSITION && firstVisibleItem != 0) {
             coroutineScope.launch {
                 val defferedAutoScroll = async {
-                    val currentList = (adapter as SponsorAdapter).currentList
-                    val secondPart = currentList.subList(0, firstVisibleItem)
-                    val firstPart = currentList.subList(firstVisibleItem, currentList.size)
-                    (adapter as SponsorAdapter).submitList(firstPart + secondPart)
+                    val currentList = (adapter as SponsorAdapter).currentList.toMutableList()
+                    val secondPart = currentList.subList(0, REPLACE_POSITION)
+                    val firstPart = currentList.subList(REPLACE_POSITION, currentList.size)
+                    val newList = mutableListOf<Sponsor>().apply {
+                        addAll(firstPart)
+                        addAll(secondPart)
+                    }
+                    (adapter as SponsorAdapter).submitList(newList)
                 }
                 defferedAutoScroll.await()
             }
@@ -95,6 +95,10 @@ internal class InfoAdapter(
         delay(25L)
         smoothScrollBy(SCROLL_DX, 0)
         launchAutoScroll(coroutineScope)
+    }
+
+    companion object {
+        private const val REPLACE_POSITION = 1
     }
 }
 
