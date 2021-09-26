@@ -12,8 +12,10 @@ import com.droidknights.app2021.home.util.DataBindingViewHolder
 import com.droidknights.app2021.home.util.recyclerview.ItemDiffCallback
 import com.droidknights.app2021.home.util.recyclerview.ListBindingAdapter
 import com.droidknights.app2021.shared.model.Sponsor
-import kotlinx.coroutines.*
-import timber.log.Timber
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 private const val SCROLL_DX = 25
 
@@ -40,13 +42,24 @@ internal class InfoAdapter(
     ) : LifecycleObserver {
         private var scrollJob: Job? = null
 
-        @SuppressLint("ClickableViewAccessibility")
         @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
         fun startSponsorScroll() {
             scrollJob = holder.itemView.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
                 (holder.binding as ItemInfoHeaderBinding).sponsorList.launchAutoScroll(
                     holder.itemView.findViewTreeLifecycleOwner()?.lifecycleScope
                 )
+            }
+        }
+
+        @SuppressLint("ClickableViewAccessibility")
+        @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+        fun againRegisterListeners() {
+            if (scrollJob?.isCancelled == true) {
+                scrollJob = holder.itemView.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
+                    (holder.binding as ItemInfoHeaderBinding).sponsorList.launchAutoScroll(
+                        holder.itemView.findViewTreeLifecycleOwner()?.lifecycleScope
+                    )
+                }
             }
 
             (holder.binding as ItemInfoHeaderBinding).sponsorList.setOnTouchListener { v, event ->
@@ -77,7 +90,6 @@ internal class InfoAdapter(
         }
 
         private tailrec suspend fun RecyclerView.launchAutoScroll(lifeCycleScope: LifecycleCoroutineScope?) {
-            Timber.d("Call launchAutoScroll")
             val firstVisibleItem =
                 (layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
             if (firstVisibleItem != RecyclerView.NO_POSITION && firstVisibleItem != 0) {
