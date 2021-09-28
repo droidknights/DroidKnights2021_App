@@ -8,6 +8,10 @@ plugins {
 android {
     buildFeatures {
         dataBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Dep.Compose.version
     }
 }
 
@@ -24,6 +28,14 @@ dependencies {
     implementation(Dep.AndroidX.recyclerview)
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation(Dep.AndroidX.browser)
+
+    implementation(Dep.Compose.ui)
+    implementation(Dep.Compose.material)
+    implementation(Dep.Compose.tooling)
+    implementation(Dep.Compose.themeAdapter)
+    implementation(Dep.Compose.liveData)
+
+    implementation(Dep.Coil.compose)
 
     implementation(Dep.Kotlin.dateTime)
 

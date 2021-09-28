@@ -5,13 +5,12 @@
 
     <data>
 
-        <variable
-            name="itemHandler"
-            type="com.droidknights.app2021.home.ui.adapter.SponsorAdapter.ItemHandler" />
 
         <variable
             name="item"
             type="com.droidknights.app2021.home.ui.adapter.InfoItem" />
+
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -89,21 +88,17 @@
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@id/tvDesc" />
 
-            <!-- TODO: Auto-scroll RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sponsorList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal"
-                app:itemHandler="@{itemHandler}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvContent"
-                app:sponsors="@{item.sponsors}"
-                tools:itemCount="4"
-                tools:listitem="@layout/item_info_sponsor" />
+                tools:itemCount="4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

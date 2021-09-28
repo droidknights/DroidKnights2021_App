@@ -27,7 +27,7 @@ internal class EventAdapter(
         holder.binding.setVariable(BR.itemHandler, itemHandler)
     }
 
-    interface ItemHandler {
+    fun interface ItemHandler {
         fun clickEvent(event: Event)
     }
 }

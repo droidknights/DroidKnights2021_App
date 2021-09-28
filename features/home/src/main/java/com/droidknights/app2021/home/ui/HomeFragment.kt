@@ -14,8 +14,6 @@ import com.droidknights.app2021.home.ui.adapter.EventAdapter
 import com.droidknights.app2021.home.ui.adapter.HeaderAdapter
 import com.droidknights.app2021.home.ui.adapter.InfoAdapter
 import com.droidknights.app2021.home.util.startOpenUrl
-import com.droidknights.app2021.shared.model.Event
-import com.droidknights.app2021.shared.model.Sponsor
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,7 +24,8 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
@@ -39,16 +38,10 @@ class HomeFragment : Fragment() {
             val concatAdapter = ConcatAdapter(
                 ConcatAdapter.Config.Builder().setIsolateViewTypes(false).build(),
                 HeaderAdapter(),
-                InfoAdapter(it.sponsors, object : InfoAdapter.ItemHandler {
-                    override fun clickSponsor(sponsor: Sponsor) {
-                        requireContext().startOpenUrl(sponsor.homepage)
-                    }
-                }),
-                EventAdapter(it.events, object : EventAdapter.ItemHandler {
-                    override fun clickEvent(event: Event) {
-                        requireContext().startOpenUrl(event.url)
-                    }
-                })
+                InfoAdapter(it.sponsors) { sponsor ->
+                    requireContext().startOpenUrl(sponsor.homepage)
+                },
+                EventAdapter(it.events) { event -> requireContext().startOpenUrl(event.url) }
             )
             binding.recyclerView.adapter = concatAdapter
             binding.recyclerView.addItemDecoration(EventItemDecoration(view.context))
